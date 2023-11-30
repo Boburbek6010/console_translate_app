@@ -1,3 +1,4 @@
-abstract class Menu{
+
+abstract class Menu {
   Future<void> build();
 }
