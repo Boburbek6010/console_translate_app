@@ -17,6 +17,4 @@ class HomeMenu extends Menu {
   Future<void> build() {
     throw UnimplementedError();
   }
-
-
 }
