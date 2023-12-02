@@ -1,6 +1,3 @@
-import 'package:console_translate_app/services/extension_service.dart';
-import 'package:console_translate_app/services/language_service.dart';
-
 void main() {
   // while(true){
   //   HomeMenu homeMenu = HomeMenu();
