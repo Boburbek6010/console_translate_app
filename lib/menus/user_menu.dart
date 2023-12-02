@@ -1,6 +1,7 @@
 
 import 'dart:io';
 
+import 'package:console_translate_app/menus/login_menu.dart';
 import 'package:console_translate_app/menus/main_menu.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
 
@@ -12,7 +13,7 @@ class UserMenu extends Menu{
   Future<void> selectWhoAreU(String press) async {
     switch(press){
       case "I":{
-        print("You chose log in");
+        Navigator.push(LogInMenu());
       }
       break;
 

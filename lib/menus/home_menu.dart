@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 import 'package:console_translate_app/menus/authenfication_menu.dart';
