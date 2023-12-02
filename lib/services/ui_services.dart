@@ -51,9 +51,9 @@ void displayMenu(List<String> actions, String menuName) {
   printBeginning();
   print("\t\t\t$menuName");
   printVoid(); printVoid();
-  actions.forEach((element) {
+  for (var element in actions) {
     print("\t\t$element");
-  });
+  }
   printExit();
 }
 

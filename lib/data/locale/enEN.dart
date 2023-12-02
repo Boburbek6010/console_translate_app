@@ -7,8 +7,4 @@ const Map<String, String> en = {
   "askPhoneNumber":"Please enter you phone number\nNote: It should be 9 digits\n",
   "askPassword":"Please enter your password:\n",
   "successfull":"Successfully registered!\n",
-
-
-
-
 };

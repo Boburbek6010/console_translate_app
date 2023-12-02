@@ -1,7 +1,9 @@
 
 import 'dart:convert';
 
-List<UserAuth> userListFromData(String data) => List<UserAuth>.from(jsonDecode(data).map((e) => UserAuth.fromJson(e)));
+List<UserAuth> userListFromData(String data)
+=> List<UserAuth>.from(jsonDecode(data).map((e)
+=> UserAuth.fromJson(e)));
 
 class UserAuth{
   late String password;
@@ -15,7 +17,7 @@ class UserAuth{
   UserAuth.fromJson(Map<String, dynamic>json){
     password = json["password"];
     username = json["username"];
-    phoneNum = json["phone_num"];
+    phoneNum = json["phoneNum"];
     id = json["id"];
   }
 
@@ -24,7 +26,7 @@ class UserAuth{
     return {
       "password": password,
       "username": username,
-      "phone_num": phoneNum,
+      "phoneNum": phoneNum,
       "id": id
     };
   }
