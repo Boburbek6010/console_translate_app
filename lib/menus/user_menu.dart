@@ -1,25 +1,23 @@
 
 import 'dart:io';
 
-import 'package:console_translate_app/menus/admin_menu.dart';
 import 'package:console_translate_app/menus/main_menu.dart';
-import 'package:console_translate_app/menus/user_menu.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
 
 import '../services/language_service.dart';
 
-class AuthenficationMenu extends Menu{
-  static const id = "/authenfiaction_menu";
+class UserMenu extends Menu{
+  static const id = "/user_menu";
 
   Future<void> selectWhoAreU(String press) async {
     switch(press){
       case "I":{
-         await Navigator.push((UserMenu()));
+        print("You chose log in");
       }
       break;
 
       case "II":{
-        await Navigator.push((AdminMenu()));
+        print("You chose sign up");
       }
       default: build();
     }
@@ -27,8 +25,8 @@ class AuthenficationMenu extends Menu{
 
   @override
   Future<void> build() async{
-    print("I. USER");
-    print("II. ADMIN");
+    print("I. LOG IN");
+    print("II. SIGN UP");
 
     String press = stdin.readLineSync() ?? "";
 

@@ -1,6 +1,7 @@
 
 import 'dart:io';
 
+import 'package:console_translate_app/menus/authenfication_menu.dart';
 import 'package:console_translate_app/menus/setting_menu.dart';
 import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
@@ -16,7 +17,7 @@ class HomeMenu extends Menu{
       }
       break;
       case "2":{
-        await Navigator.push(SettingMenu());
+        await Navigator.push(AuthenficationMenu());
       }
       default: build();
     }
