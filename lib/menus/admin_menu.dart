@@ -7,7 +7,7 @@ import 'package:console_translate_app/services/navigation_service.dart';
 import '../services/language_service.dart';
 
 class AdminMenu extends Menu{
-  static const id = "/user_menu";
+  static const id = "/admin_menu";
 
   Future<void> selectWhoAreU(String press) async {
     switch(press){

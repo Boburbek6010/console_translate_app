@@ -2,6 +2,7 @@
 import 'dart:io';
 
 import 'package:console_translate_app/menus/main_menu.dart';
+import 'package:console_translate_app/menus/register_menu.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
 
 import '../services/language_service.dart';
@@ -17,7 +18,7 @@ class UserMenu extends Menu{
       break;
 
       case "II":{
-        print("You chose sign up");
+        await Navigator.push(RegisterMenu());
       }
       default: build();
     }
