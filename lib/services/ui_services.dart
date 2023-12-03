@@ -25,31 +25,31 @@ void pBlue(Object? value){
 
 ///prints the beginning of the top of the application
 void printBeginning(){
-  print("  _________________________________");
-  print(" |                                 |");
-  print(" |                                 |");
-  pBold("|       📚Translate App📚        |");
-  print(" |                                 |");
+  print("  ______________________________________");
+  print(" |                                      | ");
+  print(" |                                      | ");
+  pBold(" |            📚Translate App📚          | ");
+  print(" |                                      | ");
 
 }
 
 ///prints the bottom of the application
 void printExit() {
-  print(" |      0. Exit ❌                 |");
+  print(" |      0. Exit ❌                       |");
   printVoid();
-  print(" |_________________________________|");
+  print(" |_______________________________________|");
 }
 
 ///prints a void strings in order to fulfill the ui
 void printVoid(){
-  print(" |                                 |");
-  print(" |                                 |");
+  print(" |                                       |");
+  print(" |                                       |");
 }
 
 ///displays a menu
 void displayMenu(List<String> actions, String menuName) {
   printBeginning();
-  print("\t\t\t$menuName");
+  print("\t\t\t\t\t$menuName");
   printVoid(); printVoid();
   for (var element in actions) {
     print("\t\t$element");
@@ -129,11 +129,31 @@ void displaySettingMenu(){
 ///displays the main menu
 void displayMainMenu() {
   List<String> actions = [
-    "1. Translate a word 🔎",
-    "2. Add new word ✅",
-    "3. History📜",
+    "1. Add new word ✅",
+    "2. History📜",
+    "3. Dictionary🔎",
     "4. Settings"
   ];
   String menu = "Main Menu";
   displayMenu(actions, menu);
 }
+
+///display admin menu ui
+void adminMenuUi(){
+  List<String> actionsAdmin = [
+    "1. Foydalanuvchi malumotlarini ko'rish",
+    "2. Yaroqsiz so'zlarni o'chirish"
+  ];
+  String adminMenu = "Admin Menu";
+  displayMenu(actionsAdmin, adminMenu);
+}
+
+void historyMenuUi(){
+  List<String> actionsH = [
+    "1. Searched words",
+    "2. Added words"
+  ];
+  String historyM = "History menu";
+  displayMenu(actionsH, historyM);
+}
+

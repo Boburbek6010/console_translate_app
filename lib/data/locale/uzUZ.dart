@@ -8,9 +8,4 @@ const Map<String, String> uz = {
   "askPassword":"Iltimos, parolingizni kiriting:\n ",
   "successfull":"Muvaffaqiyatli ro'yxatdan o'tdi!\n",
 
-
-
-
-
-
 };

@@ -1,5 +1,6 @@
 
 import 'dart:io';
+import 'package:console_translate_app/menus/home_menu.dart';
 import 'package:console_translate_app/menus/user_menu.dart';
 import 'package:console_translate_app/models/user_auth.dart';
 import 'package:console_translate_app/services/network_service.dart';
@@ -21,11 +22,11 @@ class LogInMenu extends Menu {
     }else {
       print("Kirish muvaffaqiyatli!");
       /// Navigate to the main menu
-      displayMenu(["1. Add new words","2. Show history", "3. Dictionary", "4. Settings"],"Main menu" );
+      displayMainMenu();
+      await Navigator.push(Choices());
+
     }
   }
-
-
 
   @override
   Future<void> build() async {
@@ -48,26 +49,9 @@ class LogInMenu extends Menu {
   }
 
 }
-    /*
-    switch (press) {
-      case "I":
-        {
-          LanguageService.setLanguage = Language.uz;
-        }
-        break;
-      case "II":
-        {
-          LanguageService.setLanguage = Language.ru;
-        }
-        break;
-      case "III":
-        {
-          LanguageService.setLanguage = Language.en;
-        }
-      default:
-        build();
-    }
-    */
+
+
+
 
 
 

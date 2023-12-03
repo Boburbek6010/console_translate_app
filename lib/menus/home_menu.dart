@@ -1,9 +1,13 @@
 import 'dart:io';
 
 import 'package:console_translate_app/menus/authenfication_menu.dart';
+import 'package:console_translate_app/menus/setting_mainMenu.dart';
 import 'package:console_translate_app/menus/setting_menu.dart';
 import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
+import 'addNewWord_menu.dart';
+import 'dictionary_menu.dart';
+import 'history_menu.dart';
 import 'main_menu.dart';
 
 class HomeMenu extends Menu{
@@ -31,8 +35,32 @@ class HomeMenu extends Menu{
     String press = stdin.readLineSync() ?? "";
 
     await selectMenu(press);
-
-
   }
 
+
+
+}
+class Choices extends Menu {
+
+
+  @override
+  Future<void> build() async {
+    print('Tanlang: ');
+    int choice = int.parse(stdin.readLineSync()!);
+    switch (choice) {
+      case 0:
+        exit(0);
+      case 1:
+        await Navigator.push(AddNewWord());
+      case 2:
+        await Navigator.push(HistoryMenu());
+      case 3:
+        await Navigator.push(DictionaryMenu());
+      case 4:
+       await Navigator.push(SettingMainMenu());
+      default:
+        print("Bunday raqamdagi menu yo'q, qaytadan urining");
+        build();
+    }
+  }
 }

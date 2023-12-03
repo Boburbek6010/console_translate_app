@@ -6,7 +6,6 @@ import 'package:console_translate_app/menus/main_menu.dart';
 import 'package:console_translate_app/menus/user_menu.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
 
-import '../services/language_service.dart';
 
 class AuthenficationMenu extends Menu{
   static const id = "/authenfiaction_menu";

@@ -1,12 +1,9 @@
 
 import 'dart:io';
 
-import 'package:console_translate_app/menus/authenfication_menu.dart';
-import 'package:console_translate_app/menus/setting_menu.dart';
 import 'package:console_translate_app/menus/user_menu.dart';
 import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
-import 'package:http/http.dart';
 import 'main_menu.dart';
 
 class RegisterMenu extends Menu{
