@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 class NewWord{
   late String word;
   late String fromLang;
@@ -23,8 +22,5 @@ class NewWord{
     "description":description,
   };
 }
-
-
 List<NewWord> swFromJson(String data) => List<NewWord>.from(jsonDecode(data).map((e)=>NewWord.fromJson(e)));
-
 String swToJson(NewWord newWord) => jsonEncode(newWord.toJson());
