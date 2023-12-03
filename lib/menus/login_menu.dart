@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:console_translate_app/menus/home_menu.dart';
 import 'package:console_translate_app/menus/user_menu.dart';
 import 'package:console_translate_app/models/user_auth.dart';
+import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/network_service.dart';
 import '../services/navigation_service.dart';
 import '../services/ui_services.dart';
@@ -17,10 +18,10 @@ class LogInMenu extends Menu {
     bool usernameExists = await LogInMenu.checkMap(username, password);
 
     if (usernameExists == false) {
-      print("Siz ro'yxatdan o'tmagansiz!");
+      print("Siz ro'yxatdan o'tmagansiz!".tr);
       await Navigator.push((UserMenu()));
     }else {
-      print("Kirish muvaffaqiyatli!");
+      print("Kirish muvaffaqiyatli!".tr);
       /// Navigate to the main menu
       displayMainMenu();
       await Navigator.push(Choices());
@@ -30,9 +31,9 @@ class LogInMenu extends Menu {
 
   @override
   Future<void> build() async {
-    print('Iltimos, foydalanuvchi nomini kiriting: ');
+    print('Iltimos, foydalanuvchi nomini kiriting: '.tr);
     String username = stdin.readLineSync()!;
-    print('Iltimos password kiriting');
+    print('Iltimos password kiriting'.tr);
     String password = stdin.readLineSync()!;
     logIn(username, password);
   }

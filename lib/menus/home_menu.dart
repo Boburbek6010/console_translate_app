@@ -45,7 +45,7 @@ class Choices extends Menu {
 
   @override
   Future<void> build() async {
-    print('Tanlang: ');
+    print('Tanlang: '.tr);
     int choice = int.parse(stdin.readLineSync()!);
     switch (choice) {
       case 0:

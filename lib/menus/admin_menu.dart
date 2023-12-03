@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:console_translate_app/menus/main_menu.dart';
 import 'package:console_translate_app/models/admin_auth.dart';
+import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
 import 'package:console_translate_app/services/network_service.dart';
 import 'package:console_translate_app/services/ui_services.dart';
@@ -16,11 +17,11 @@ class AdminMenu extends Menu{
   bool resultOfChecking = await AdminMenu.checkAdminUsernamePassword(usernameAdmin, passwordAdmin);
 
   if(resultOfChecking == false){
-    print("Noto'g'ri kiritingiz, qayta urining");
+    print("Noto'g'ri kiritingiz, qayta urining".tr);
     await Navigator.push(AdminMenu());
     }
    else {
-    print('Admin muvofaqiyatli kirdi!');
+    print('Admin muvofaqiyatli kirdi!'.tr);
     ///Navigate admin actions
      adminMenuUi();
     }
@@ -40,9 +41,9 @@ class AdminMenu extends Menu{
   @override
   Future<void> build() async{
     ///Asking username and paaword of admin
-    print('Iltimos, admin usernameni kiriting: ');
+    print('Iltimos, admin usernameni kiriting: '.tr);
     String usernameAdmin = stdin.readLineSync()!;
-    print('Iltimos, admin passwordini kiriting: ');
+    print('Iltimos, admin passwordini kiriting: '.tr);
     String passwordAdmin = stdin.readLineSync()!;
     adminLogIn(usernameAdmin, passwordAdmin);
   }

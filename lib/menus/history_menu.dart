@@ -1,6 +1,8 @@
 
 import 'dart:io';
 
+import 'package:console_translate_app/services/extension_service.dart';
+
 import '../services/ui_services.dart';
 import 'main_menu.dart';
 
@@ -10,7 +12,7 @@ class HistoryMenu extends Menu{
   @override
   Future<void> build() async{
     historyMenuUi();
-    print('Tanlang: ');
+    print('Tanlang: '.tr);
     int choice = int.parse(stdin.readLineSync()!);
     switch(choice){
       case 0:
@@ -20,7 +22,7 @@ class HistoryMenu extends Menu{
       case 2:
         displayHistoryofWords(["book", "apple", "car", "pencil"]);
       default:
-        print("Noto'g'ri raqam yozildi qaytadan urining");
+        print("Noto'g'ri kiritingiz, qayta urining".tr);
         build();
     }
   }
