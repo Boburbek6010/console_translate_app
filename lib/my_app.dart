@@ -1,21 +1,18 @@
 
 import 'package:console_translate_app/services/language_service.dart';
-import 'package:console_translate_app/services/ui_services.dart';
 
 import 'menus/main_menu.dart';
 
-void main() {
-  // displaySettingMenu();
-  // displayNewWord(word: "word",
-  //     translation: "translation",
-  //     fromLang: "fromLang",
-  //     toLang: "toLang",
-  //     description: "this is description");
-  List<String> words = ["hello","hi","ehehhe"];
-  displayHistoryofWords(words);
-}
-
-
+// void main() {
+//   // displaySettingMenu();
+//   // displayNewWord(word: "word",
+//   //     translation: "translation",
+//   //     fromLang: "fromLang",
+//   //     toLang: "toLang",
+//   //     description: "this is description");
+//   List<String> words = ["hello","hi","ehehhe","Muslima"];
+//   displayHistoryofWords(words);
+// }
 
 class MyApp{
 
@@ -32,6 +29,10 @@ class MyApp{
   }
 
   Future<void> _runApp(Menu menu)async{
-    await menu.build();
+
+      await menu.build();
+
   }
+
+
 }
