@@ -8,6 +8,10 @@ class NetworkService{
   static final String baseUrlUserAuth = "6568659c9927836bd974ba9d.mockapi.io";
   static final String apiUserAuth = "/user_auth";
 
+  static final String baseUrlWord = "655deec19f1e1093c59a2f51.mockapi.io";
+  static final String apiWord = "/List_of_searched_words";
+  static final String apiNewWord = "/new_word";
+
   static Map<String, String> headers = {'Content-Type': 'application/json'};
 
   static Future<String> getData(String baseUrl, String api) async {
@@ -26,6 +30,14 @@ class NetworkService{
     else {
       return "Something went wrong at ${response.statusCode}";
     }
+  }
+
+
+  static Future<String> deleteData(String baseUrl, String api, String id) async {
+    Uri url = Uri.https(baseUrl,"$api/$id");
+    Response response = await delete(url, headers: headers);
+    if(response.statusCode == 200 || response.statusCode == 201) return response.body;
+    else return "Smth got wrong!! -- ${response.statusCode}";
   }
 }
 
