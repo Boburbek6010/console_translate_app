@@ -1,5 +1,8 @@
 
+import 'package:console_translate_app/services/language_service.dart';
 import 'package:console_translate_app/services/ui_services.dart';
+
+import 'menus/main_menu.dart';
 
 void main() {
   // displaySettingMenu();
@@ -8,6 +11,27 @@ void main() {
   //     fromLang: "fromLang",
   //     toLang: "toLang",
   //     description: "this is description");
-  List<String> words = ["hello","hi","ehehhe","Muslima"];
+  List<String> words = ["hello","hi","ehehhe"];
   displayHistoryofWords(words);
+}
+
+
+
+class MyApp{
+
+  static Map<String, Menu> routeMenu = {};
+
+  MyApp({
+    required Menu home,
+    required Map<String, Menu> routes,
+    required Language lang,
+  }){
+    LanguageService.setLanguage = lang;
+    routeMenu = routes;
+    _runApp(home);
+  }
+
+  Future<void> _runApp(Menu menu)async{
+    await menu.build();
+  }
 }

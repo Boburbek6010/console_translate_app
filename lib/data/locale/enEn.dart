@@ -1,15 +1,6 @@
 const Map<String, String> en = {
-  "welcome":"Welcome to our App\n"
+  "welcome":"Welcome to our app\n",
+  "setting":"Setting menu\n",
+  "exit":"Exit\n",
+  "start":"Start\n"
 };
-
-
-const Map<String, String> ru = {
-  "welcome":"Welcome to our App only in russian\n"
-};
-
-
-const Map<String, String> uz = {
-  "welcome":"Ilovamizga hush kelibsiz\n"
-};
-
-

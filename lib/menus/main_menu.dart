@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 import 'package:console_translate_app/services/network_service.dart';
 import 'package:console_translate_app/services/ui_services.dart';
@@ -35,7 +34,7 @@ Future<void> translateWordProcess(List<String> answers) async {
   String word = answers[2];
   translate(word: word, fromLang: fromLang, toLang: toLang);
   Map<String, String> searchedWord = {"searchedWord": word};
-  String res = await NetworkService.postData(searchedWord, NetworkService.baseUrlWord, NetworkService.apiWord);
+  await NetworkService.postData(searchedWord, NetworkService.baseUrlWord, NetworkService.apiWord);
 }
 
 Future<void> translate ({
@@ -74,7 +73,7 @@ Future<void> addNewWordProcess(List<String> answers) async{
     "translation" : answers[3],
     "description" : answers[4],
   };
-  String res = await NetworkService.postData(newWord, NetworkService.baseUrlWord, NetworkService.apiNewWord);
+  await NetworkService.postData(newWord, NetworkService.baseUrlWord, NetworkService.apiNewWord);
   displayNewWord(word: newWord["word"]!, translation: newWord["translation"]!, fromLang: newWord["currentLang"]!, toLang: newWord["desiredLang"]!, description: newWord["description"]!);
 }
 
