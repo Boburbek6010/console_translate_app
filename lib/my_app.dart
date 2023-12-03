@@ -1,14 +1,13 @@
+
+import 'package:console_translate_app/services/ui_services.dart';
+
 void main() {
-  // while(true){
-  //   HomeMenu homeMenu = HomeMenu();
-  //   homeMenu.build();
-  // }
-
-  // addNewWord();
-  // translateWord();
-  //
-  // print("welcome".tr);
-  // LanguageService.switchLanguage = "1";
-
+  // displaySettingMenu();
+  // displayNewWord(word: "word",
+  //     translation: "translation",
+  //     fromLang: "fromLang",
+  //     toLang: "toLang",
+  //     description: "this is description");
+  List<String> words = ["hello","hi","ehehhe","Muslima"];
+  displayHistoryofWords(words);
 }
-

@@ -112,6 +112,7 @@ void displayHistoryofWords(List<String> words){
   printExit();
 }
 
+
 ///displays the setting menu
 void displaySettingMenu(){
   List<String> actions = [
