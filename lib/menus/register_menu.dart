@@ -17,6 +17,27 @@ class RegisterMenu extends Menu {
   String passwordPost = "";
   String phoneNumPost = "";
 
+  Future<void> checkData( ) async {
+    await enterUsername();
+    await enterAndCheckPhoneNum();
+    await enterPassword();
+
+    UserAuth userdata = UserAuth(id, password: passwordPost,
+        phoneNum: phoneNumPost,
+        username: usernamePost);
+    String response = await NetworkService.postData(
+        userdata.toJson(), NetworkService.baseUrlUserAuth,
+        NetworkService.apiUserAuth);
+    print(response);
+
+    Navigator.push(UserMenu());
+  }
+
+  @override
+  Future<void> build() async {
+    await checkData();
+  }
+
   Future<void> enterPassword() async {
     int counter = 0;
     print("askPassword".tr);
@@ -32,7 +53,7 @@ class RegisterMenu extends Menu {
         password.contains(hasLowerCase) && password.contains(hasDigit)) {
       print("Password qabul qilindi");
       passwordPost = password;
-    }else if (counter > 0) {
+    }else if (counter != 0) {
       print("Password can not contain white space");
       enterPassword();
     } else {
@@ -50,12 +71,15 @@ class RegisterMenu extends Menu {
     List<UserAuth> userAuth = userListFromData(data);
     for (int i = 0; i < userAuth.length; i++) {
       if (userAuth[i].username == username) {
-          counter1++;
+        counter1++;
       }
     }
-    for (int i = 0; i < username.length; i++) {
-      if (username[i] == " "){
+    for (int j = 0;j < username.length; j++) {
+      if (username[j] == " "){
         counter++;
+      }else if(username[0] is num){
+        print("First character of username cannot be a digit!");
+        enterUsername();
       }
     }
     if (username.length < 3 || username.length > 16) {
@@ -95,24 +119,5 @@ class RegisterMenu extends Menu {
     }
   }
 
-  Future<void> checkData( ) async {
-    await enterUsername();
-    await enterAndCheckPhoneNum();
-    await enterPassword();
 
-    UserAuth userdata = UserAuth(id, password: passwordPost,
-        phoneNum: phoneNumPost,
-        username: usernamePost);
-    String response = await NetworkService.postData(
-        userdata.toJson(), NetworkService.baseUrlUserAuth,
-        NetworkService.apiUserAuth);
-    print(response);
-
-    Navigator.push(UserMenu());
-  }
-
-  @override
-  Future<void> build() async {
-    await checkData();
-  }
 }
