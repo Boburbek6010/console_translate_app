@@ -1,6 +1,8 @@
+
 import 'dart:io';
 
 import 'package:console_translate_app/menus/logOut_menu.dart';
+import 'package:console_translate_app/menus/deleteAccaunt_menu.dart';
 import 'package:console_translate_app/menus/main_menu.dart';
 import 'package:console_translate_app/services/ui_services.dart';
 
@@ -14,7 +16,7 @@ class SettingMainMenu extends Menu{
     int choice = int.parse(stdin.readLineSync()!);
     switch(choice){
       case 1:
-        ///settings in main menu 1
+        await Navigator.push(DeleteAccountMenu());
       case 2:
     ///settings in main menu 2
       case 3:
