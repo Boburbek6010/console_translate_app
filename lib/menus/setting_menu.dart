@@ -1,7 +1,10 @@
 import 'dart:io';
 
+import 'package:console_translate_app/menus/home_menu.dart';
+
 import '../services/language_service.dart';
 import 'main_menu.dart';
+import 'authenfication_menu.dart';
 
 
 class SettingMenu extends Menu{
@@ -23,7 +26,6 @@ class SettingMenu extends Menu{
       default: build();
     }
   }
-
 
   @override
   Future<void> build()async{
