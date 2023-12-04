@@ -7,5 +7,21 @@ const Map<String, String> uz = {
   "askPhoneNumber":"Iltimos, telefon raqamingizni kiriting\nEstlatma: 9 ta raqamdan iborat bo'lsin\n",
   "askPassword":"Iltimos, parolingizni kiriting:\n ",
   "successfull":"Muvaffaqiyatli ro'yxatdan o'tdi!\n",
-
+  "fromLang" : "Qaysi tildan tarjima qilmoqchisiz?\n",
+  "toLang" : "Qaysi tilga tarjima qilmoqchisiz?\n",
+  "word:": "So'zni kiriting: \n",
+  "translation:" : "Tarjimasini kiriting:\n",
+  "description" : "So'zning tavsifini kiriting\n",
+  "adminUserName" : "Iltimos, admin usernameni kiriting:\n",
+  "adminPassword":"Iltimos, admin passwordini kiriting:\n",
+  "succesfullyEnteredA": "Admin muvofaqiyatli kirdi\n",
+  "tryAgain" : "Noto'g'ri kiritingiz, qayta urining\n",
+  "choose": "Tanlang: \n",
+  "notRegistered":"Siz ro'yxatdan o'tmagansiz!\n",
+  "loginSuccessfully":"Kirish muvaffaqiyatli!\n",
+  "userName":"Iltimos, foydalanuvchi nomini kiriting:\n",
+  "userPassword":"Iltimos password kiriting\n",
+  "addedWords": "Added Words By User",
+  "searchedWords": "Searched Words By User",
+  "checkWAI": "Check With AI"
 };

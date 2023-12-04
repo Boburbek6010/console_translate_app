@@ -28,22 +28,22 @@ void printBeginning(){
   print("  ______________________________________");
   print(" |                                      | ");
   print(" |                                      | ");
-  pBold(" |            📚Translate App📚          | ");
+  pBold("|          📚Translate App📚          | ");
   print(" |                                      | ");
 
 }
 
 ///prints the bottom of the application
 void printExit() {
-  print(" |      0. Exit ❌                       |");
+  print(" |      0. Exit ❌                      |");
   printVoid();
-  print(" |_______________________________________|");
+  print(" |______________________________________|");
 }
 
 ///prints a void strings in order to fulfill the ui
 void printVoid(){
-  print(" |                                       |");
-  print(" |                                       |");
+  print(" |                                      |");
+  print(" |                                      |");
 }
 
 ///displays a menu
@@ -67,10 +67,10 @@ required String toLang,
  printBeginning();
   pRed("     $fromLang:");
   pRed("           $word");
-  print(" |---------------------------------|");
+  print(" |--------------------------------------|");
   pBlue("     $toLang:");
   pBlue("           $translation");
-  print(" |---------------------------------|");
+  print(" |--------------------------------------|");
   if (description != null) {
     pGreen("     Description:");
     pGreen("     $description");
@@ -78,7 +78,7 @@ required String toLang,
   }else{
     printVoid();
   }
-  print(" |      1. Main Menu 🔙            |");
+  print(" |      1. Main Menu 🔙                 |");
   printExit();
 }
 
@@ -100,15 +100,15 @@ void displayNewWord({
 }
 
 ///displays the history of words that has been searched
-void displayHistoryofWords(List<String> words){
+void displayListofWords(List<String> words, String menu){
   printBeginning();
-  print(" |           History📜             |");
-  print(" |                                 |");
+  print(" |           History📜                  |");
+  print("             $menu");
   for(int i = words.length-1; i>=0; i--){
     print("\t\t⭐️ ${words[i]}");
   }
   printVoid();
-  print(" |      1. Main Menu 🔙            |");
+  print(" |      1. Main Menu 🔙                 |");
   printExit();
 }
 
