@@ -2,8 +2,6 @@ const Map<String, String> ru = {
 
   "welcome":"Добро пожаловать в наше приложение\n",
   "setting":"Меню настроек\n",
-  "yes": "Да!\n",
-  "no":"Нет\n",
   "exit":"Выход\n",
   "start":"Начать\n",
   "askUsername":"Пожалуйста, введите ваш логин:\n ",
@@ -23,6 +21,5 @@ const Map<String, String> ru = {
   "Siz ro'yxatdan o'tmagansiz!":"Вы не зарегистрированы!\n",
   "Kirish muvaffaqiyatli!":"Авторизация успешна!\n",
   "Iltimos, foydalanuvchi nomini kiriting:":"Пожалуйста, введите Ваш логин:\n",
-  "Iltimos password kiriting":"Пожалуйста, введите пароль\n",
-  "logOut":"Вы действительно хотите ВЫХОДИТЬ из аккаунт?\n",
+  "Iltimos password kiriting":"Пожалуйста, введите пароль\n"
 };
