@@ -8,5 +8,18 @@ const Map<String, String> ru = {
   "askPhoneNumber":"Пожалуйста, введите свой номер телефона\nПримечание: Оно должно состоять из 9 цифр.\n",
   "askPassword":"Пожалуйста введите ваш пароль:\n",
   "successfull":"Успешно зарегистрирован!\n",
-
+  "fromLang" : "С какого языка вы хотите перевести?\n",
+  "toLang" : "На какой язык вы хотите перевести?\n",
+  "word:" : "Введите слово:\n",
+  "translation:": "Введите перевод:\n",
+ "description" : "Введите описание слова\n",
+ "Iltimos, admin usernameni kiriting:" : "Пожалуйста, введите имя пользователя администратора:\n",
+  "Iltimos, admin passwordini kiriting:" : "Пожалуйста, введите пароль администратора:\n",
+  "Admin muvofaqiyatli kirdi" : "Администратор успешно вошел в систему\n",
+  "Noto'g'ri kiritingiz, qayta urining":"Введите неправильно, попробуйте еще раз\n",
+   "Tanlang: ": "Выбирать\n",
+  "Siz ro'yxatdan o'tmagansiz!":"Вы не зарегистрированы!\n",
+  "Kirish muvaffaqiyatli!":"Авторизация успешна!\n",
+  "Iltimos, foydalanuvchi nomini kiriting:":"Пожалуйста, введите Ваш логин:\n",
+  "Iltimos password kiriting":"Пожалуйста, введите пароль\n"
 };
