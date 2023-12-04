@@ -57,8 +57,8 @@ class RegisterMenu extends Menu {
         print("Password can not contain white space");
         enterPassword();
       } else {
-        print(
-            "Password qabul qilinmadi! Password katta harf, son, kichik harfdan iborat bo'lishi va umumiy 8ta belgidan iborat bo'lishi kerak");
+        print("Password qabul qilinmadi!");
+        print("Password katta harf, son, kichik harfdan iborat bo'lishi va umumiy 8ta belgidan iborat bo'lishi kerak");
         enterPassword();
       }
     }
@@ -71,17 +71,18 @@ class RegisterMenu extends Menu {
     String username = stdin.readLineSync()!;
     String data = await NetworkService.getData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth);
     List<UserAuth> userAuth = userListFromData(data);
-    for (int i = 0; i < username.length; i++) {
-      if (username[i] == " ") {
-        counter++;
-      }
-    }
     for (int i = 0; i < userAuth.length; i++) {
       if (userAuth[i].username == username) {
         print("Bunday foydalanuvchi nomi allaqachon mavjud!\nIltimos boshqa nom tanlang!");
         enterUsername();
       }
     }
+    for (int i = 0; i < username.length; i++) {
+      if (username[i] == " ") {
+        counter++;
+      }
+    }
+
     print(counter1);
     if (username.length < 3 || username.length > 16) {
       print(
@@ -95,6 +96,7 @@ class RegisterMenu extends Menu {
       print("Username qabul qilindi");
       usernamePost = username.toLowerCase();
     }
+
   }
 
 
