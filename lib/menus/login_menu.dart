@@ -31,7 +31,7 @@ class LogInMenu extends Menu {
 
   @override
   Future<void> build() async {
-    print('Iltimos, foydalanuvchi nomini kiriting: '.tr);
+    print('Iltimos, foydalanuvchi nomini kiriting:'.tr);
     String username = stdin.readLineSync()!;
     print('Iltimos password kiriting'.tr);
     String password = stdin.readLineSync()!;
