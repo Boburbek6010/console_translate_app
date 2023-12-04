@@ -12,7 +12,7 @@ class UsersInformationListMenu extends Menu{
   Future<void> selectMenu(String press) async {
     switch(press){
       case"1":{
-        deleteUserFromList();
+       await deleteUserFromList();
       }
       case"2":{
         await Navigator.push(AdminMenu());
