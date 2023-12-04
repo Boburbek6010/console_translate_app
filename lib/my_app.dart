@@ -29,8 +29,10 @@ class MyApp{
   }
 
   Future<void> _runApp(Menu menu)async{
-
+    while(true){
       await menu.build();
+    }
+
 
   }
 
