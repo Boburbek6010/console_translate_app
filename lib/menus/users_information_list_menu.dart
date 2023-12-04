@@ -36,24 +36,24 @@ class UsersInformationListMenu extends Menu{
     }
   }
   Future<void> deleteUserFromList()async{
-    print("Ochirmoqchi bo'lgan user idsini kiriting: \n");
+    print("Ochirmoqchi bo'lgan user idsini kiriting:");
     String idChecker = IOService.read();
     int counter = 0;
     String data =  await NetworkService.getData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth);
     List<UserAuth> list = userListFromData(data);
     list.forEach((element) {
-      if(idChecker==element.id){
+      if(idChecker == element.id){
         counter++;
-      }else{
-        print("Unday id raqamli user mavjud emas. Iltimos e'tborli bo'ling!");
-        deleteUserFromList();
       }
     }
     );
-    if(counter>0){
+    if(counter!=0){
       await NetworkService.deleteData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth, idChecker);
       print("User muvaffaqiyatli ochirildi!");
       await Navigator.push(AdminMenu());
+    }else{
+      print("Unday id raqamli user mavjud emas. Iltimos e'tborli bo'ling!");
+      deleteUserFromList();
     }
 
   }
