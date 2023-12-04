@@ -13,30 +13,9 @@ import 'main_menu.dart';
 
 class RegisterMenu extends Menu {
   static const id = "/register_menu";
-  late String passwordPost;
   late String usernamePost;
   late String phoneNumPost;
-
-
-  Future<void> checkData() async {
-    enterUsername();
-    enterAndCheckPhoneNum();
-    enterPassword();
-    print("successful".tr);
-    UserAuth userauth = UserAuth(id, password: passwordPost,
-        phoneNum: phoneNumPost,
-        username: usernamePost);
-    String response = await NetworkService.postData(
-        userauth.toJson(), NetworkService.baseUrlUserAuth,
-        NetworkService.apiUserAuth);
-    print(response);
-    Navigator.push(UserMenu());
-  }
-
-  @override
-  Future<void> build() async {
-    checkData();
-  }
+  late String passwordPost;
 
   Future<void> enterPassword() async {
     int counter = 0;
@@ -48,21 +27,24 @@ class RegisterMenu extends Menu {
     for (int i = 0; i < password.length; i++) {
       if (password[i] == " ") {
         counter++;
-      }
-      if (password.length >= 8 && password.contains(hasUpperCase) &&
-          password.contains(hasLowerCase) && password.contains(hasDigit)) {
-        print("Password qabul qilindi");
-        passwordPost = password;
-      } else if (counter > 0) {
-        print("Password can not contain white space");
-        enterPassword();
-      } else {
-        print("Password qabul qilinmadi!");
-        print("Password katta harf, son, kichik harfdan iborat bo'lishi va umumiy 8ta belgidan iborat bo'lishi kerak");
-        enterPassword();
-      }
+      }}
+    if (password.length >= 8 && password.contains(hasUpperCase) &&
+        password.contains(hasLowerCase) && password.contains(hasDigit)) {
+      print("Password qabul qilindi");
+      passwordPost = password;
+    }else if (counter > 0) {
+      print("Password can not contain white space");
+      enterPassword();
+    } else {
+      print("Password qabul qilinmadi!");
+      print("Password katta harf, son, kichik harfdan iborat bo'lishi va umumiy 8ta belgidan iborat bo'lishi kerak");
+      enterPassword();
     }
   }
+
+
+
+
 
   Future<void> enterUsername() async {
     int counter = 0;
@@ -117,5 +99,26 @@ class RegisterMenu extends Menu {
       print("Faqat 9ta raqam kiriting!");
       enterAndCheckPhoneNum();
     }
+  }
+
+  Future<void> checkData() async {
+    enterUsername();
+    enterAndCheckPhoneNum();
+    enterPassword();
+
+    UserAuth userdata = UserAuth(id, password: passwordPost,
+        phoneNum: phoneNumPost,
+        username: usernamePost);
+    String response = await NetworkService.postData(
+        userdata.toJson(), NetworkService.baseUrlUserAuth,
+        NetworkService.apiUserAuth);
+    print(response);
+
+    Navigator.push(UserMenu());
+  }
+
+  @override
+  Future<void> build() async {
+    checkData();
   }
 }
