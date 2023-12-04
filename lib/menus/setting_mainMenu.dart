@@ -1,17 +1,20 @@
-
 import 'dart:io';
 
+import 'package:console_translate_app/menus/deleteAccaunt_menu.dart';
 import 'package:console_translate_app/menus/main_menu.dart';
 import 'package:console_translate_app/services/ui_services.dart';
+import 'package:console_translate_app/services/navigation_service.dart';
+
+import 'admin_menu.dart';
 
 class SettingMainMenu extends Menu{
   static const id = "/setting_mainMenu";
-  void settingMainMenuChoices(){
+  void settingMainMenuChoices()async{
     print("Tanlang: ");
     int choice = int.parse(stdin.readLineSync()!);
     switch(choice){
       case 1:
-        ///settings in main menu 1
+        await Navigator.push(DeleteAccountMenu());
       case 2:
     ///settings in main menu 2
       case 3:
