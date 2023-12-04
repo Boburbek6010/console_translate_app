@@ -13,15 +13,19 @@ class AddNewWord extends Menu{
     required String translation,
     required String fromLang,
     required String toLang,
-    required String description
+    required String description,
+
   }){
     displayNewWord(
         word: word,
         translation: translation,
         fromLang: fromLang,
         toLang: toLang,
-        description: description);
+        description: description,
+
+    );
   }
+
   @override
   Future<void> build() async{
     print('fromLang: '.tr);
@@ -34,7 +38,9 @@ class AddNewWord extends Menu{
     String translation = stdin.readLineSync()!;
     print('description: '.tr);
     String description = stdin.readLineSync()!;
-    displayNewW(word: newWord, translation: translation, fromLang: fromLang, toLang: toLang, description: description);
+    displayNewW(word: newWord, translation: translation, fromLang: fromLang, toLang: toLang, description: description,);
+
+
   }
 
 }

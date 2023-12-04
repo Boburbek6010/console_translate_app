@@ -41,11 +41,6 @@ class RegisterMenu extends Menu {
       enterPassword();
     }
   }
-
-
-
-
-
   Future<void> enterUsername() async {
     int counter = 0;
     int counter1 = 0;
@@ -55,16 +50,14 @@ class RegisterMenu extends Menu {
     List<UserAuth> userAuth = userListFromData(data);
     for (int i = 0; i < userAuth.length; i++) {
       if (userAuth[i].username == username) {
-        print("Bunday foydalanuvchi nomi allaqachon mavjud!\nIltimos boshqa nom tanlang!");
-        enterUsername();
+          counter1++;
       }
     }
     for (int i = 0; i < username.length; i++) {
-      if (username[i] == " ") {
+      if (username[i] == " "){
         counter++;
       }
     }
-
     print(counter1);
     if (username.length < 3 || username.length > 16) {
       print(
@@ -73,10 +66,12 @@ class RegisterMenu extends Menu {
     }else if (counter > 0) {
       print("Username can not contain white space");
       enterUsername();
+    }else if(counter1 > 0){
+      print("Bu usernamedan allaqoachon foydalanilgan!");
+      enterUsername();
     }
     else {
       print("Username qabul qilindi");
-      usernamePost = username.toLowerCase();
     }
 
   }

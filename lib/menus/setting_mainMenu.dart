@@ -1,12 +1,15 @@
-
 import 'dart:io';
 
+import 'package:console_translate_app/menus/logOut_menu.dart';
 import 'package:console_translate_app/menus/main_menu.dart';
 import 'package:console_translate_app/services/ui_services.dart';
 
+import '../services/navigation_service.dart';
+
+
 class SettingMainMenu extends Menu{
   static const id = "/setting_mainMenu";
-  void settingMainMenuChoices(){
+  void settingMainMenuChoices()async{
     print("Tanlang: ");
     int choice = int.parse(stdin.readLineSync()!);
     switch(choice){
@@ -15,7 +18,7 @@ class SettingMainMenu extends Menu{
       case 2:
     ///settings in main menu 2
       case 3:
-    ///settings in main menu 3
+      await Navigator.push(LogOutMenu());
       case 4:
     ///settings in main menu 4
       default:
