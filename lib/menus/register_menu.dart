@@ -13,9 +13,9 @@ import 'main_menu.dart';
 
 class RegisterMenu extends Menu {
   static const id = "/register_menu";
-  late String usernamePost;
-  late String phoneNumPost;
-  late String passwordPost;
+  String usernamePost = "";
+  String passwordPost = "";
+  String phoneNumPost = "";
 
   Future<void> enterPassword() async {
     int counter = 0;
@@ -58,20 +58,19 @@ class RegisterMenu extends Menu {
         counter++;
       }
     }
-    print(counter1);
     if (username.length < 3 || username.length > 16) {
-      print(
-          "Username 3ta belgidan kam va 16ta belgidan ko'p bo'lishi mumkin emas");
+      print("Username 3ta belgidan kam va 16ta belgidan ko'p bo'lishi mumkin emas");
       enterUsername();
-    }else if (counter > 0) {
+    }else if (counter != 0) {
       print("Username can not contain white space");
       enterUsername();
-    }else if(counter1 > 0){
+    }else if(counter1 != 0){
       print("Bu usernamedan allaqoachon foydalanilgan!");
       enterUsername();
     }
-    else {
+    else{
       print("Username qabul qilindi");
+      usernamePost = username;
     }
 
   }
@@ -96,10 +95,10 @@ class RegisterMenu extends Menu {
     }
   }
 
-  Future<void> checkData() async {
-    enterUsername();
-    enterAndCheckPhoneNum();
-    enterPassword();
+  Future<void> checkData( ) async {
+    await enterUsername();
+    await enterAndCheckPhoneNum();
+    await enterPassword();
 
     UserAuth userdata = UserAuth(id, password: passwordPost,
         phoneNum: phoneNumPost,
@@ -114,6 +113,6 @@ class RegisterMenu extends Menu {
 
   @override
   Future<void> build() async {
-    checkData();
+    await checkData();
   }
 }
