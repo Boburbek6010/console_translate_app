@@ -12,15 +12,15 @@ class SettingMenu extends Menu{
 
   Future<void> selectMenu(String press) async {
     switch(press){
-      case "I":{
+      case "1":{
         LanguageService.setLanguage = Language.uz;
       }
       break;
-      case "II":{
+      case "2":{
         LanguageService.setLanguage = Language.ru;
       }
       break;
-      case "III":{
+      case "3":{
         LanguageService.setLanguage = Language.en;
       }
       default: build();
@@ -29,9 +29,9 @@ class SettingMenu extends Menu{
 
   @override
   Future<void> build()async{
-    print("I. UZ");
-    print("II. RU");
-    print("III. EN");
+    print("1. UZ");
+    print("2. RU");
+    print("3. EN");
 
     String press = stdin.readLineSync() ?? "";
 

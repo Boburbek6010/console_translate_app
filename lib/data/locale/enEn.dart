@@ -21,5 +21,17 @@ const Map<String, String> en = {
   "Kirish muvaffaqiyatli!": "Login successful!\n",
   "Iltimos, foydalanuvchi nomini kiriting:": "Please enter your username:\n",
   "Iltimos password kiriting":"Please enter a password\n",
-
+  "adminUserName": "Please enter admin username:\n",
+   "adminPassword": "Please enter the admin password:\n",
+ "succesfullyEnteredA" : "Admin successfully logged in\n",
+  "tryAgain": "Enter wrong, try again\n",
+  "choose" : "Choose\n",
+  "notRegistered": "You are not registered!\n",
+  "loginSuccessfully": "Login successful!\n",
+  "userName": "Please enter your username:\n",
+  "userPassword":"Please enter a password\n",
+  "addedWords": "Added Words By User",
+  "searchedWords": "Searched Words By User",
+  "checkWAI": "Check With AI",
+  "logOut":"Are you sure you want to LOG OUT?\n",
 };

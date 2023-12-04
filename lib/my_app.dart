@@ -1,18 +1,13 @@
 
+import 'package:console_translate_app/menus/check_with_ai.dart';
 import 'package:console_translate_app/services/language_service.dart';
 
 import 'menus/main_menu.dart';
 
-// void main() {
-//   // displaySettingMenu();
-//   // displayNewWord(word: "word",
-//   //     translation: "translation",
-//   //     fromLang: "fromLang",
-//   //     toLang: "toLang",
-//   //     description: "this is description");
-//   List<String> words = ["hello","hi","ehehhe","Muslima"];
-//   displayHistoryofWords(words);
-// }
+void main() {
+  // addNewWord();
+  displayCheck();
+}
 
 class MyApp{
 
@@ -29,12 +24,6 @@ class MyApp{
   }
 
   Future<void> _runApp(Menu menu)async{
-   // while(true){
       await menu.build();
-    //}
-
-
   }
-
-
 }

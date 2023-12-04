@@ -11,9 +11,9 @@ class LanguageService{
 
   static set switchLanguage(String lang){
     switch(lang){
-      case "I":{_language = Language.uz;} break;
-      case "II":{_language = Language.ru;} break;
-      case "III":{_language = Language.en;} break;
+      case "1":{Language.uz;} break;
+      case "2":{Language.ru;} break;
+      case "3":{Language.en;} break;
     }
   }
 }

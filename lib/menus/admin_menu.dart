@@ -23,7 +23,7 @@ class AdminMenu extends Menu{
    else {
     print('Admin muvofaqiyatli kirdi!'.tr);
     ///Navigate admin actions
-     adminMenuUi();
+    adminMenuUi();
     }
   }
 
