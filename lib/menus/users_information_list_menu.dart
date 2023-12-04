@@ -32,30 +32,32 @@ class UsersInformationListMenu extends Menu{
     String data =  await NetworkService.getData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth);
     List<UserAuth> list = userListFromData(data);
     for (int i = 0; i<list.length; i++) {
-      print("username: ${list[i].username}, password: ${list[i].password}, phone number: ${list[i].phoneNum} id: ${list[i].id}\n");
+      print("${i+1}.username: ${list[i].username}, phone number: ${list[i].phoneNum} id: ${list[i].id}\n");
     }
   }
   Future<void> deleteUserFromList()async{
-    print("Ochirmoqchi bo'lgan user idsini kiriting:");
-    String idChecker = IOService.read();
+    print("Ochirmoqchi bo'lgan user tartib raqamini kiriting:");
+    String? idChecker = IOService.read();
+    int? idChekerInt = int.tryParse(idChecker);
     int counter = 0;
     String data =  await NetworkService.getData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth);
     List<UserAuth> list = userListFromData(data);
-    list.forEach((element) {
-      if(idChecker == element.id){
-        counter++;
+    if(idChekerInt == null || idChekerInt > list.length){
+      print("Iltimos faqat son kiriting");
+      deleteUserFromList();
+    }else{
+      for (int i=0;  i<list.length; i++) {
+        if(list[idChekerInt-1] == list[i]){
+          counter++;
+        }
       }
     }
-    );
+
     if(counter!=0){
-      await NetworkService.deleteData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth, idChecker);
+      await NetworkService.deleteData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth, list[idChekerInt!-1].id);
       print("User muvaffaqiyatli ochirildi!");
       await Navigator.push(AdminMenu());
-    }else{
-      print("Unday id raqamli user mavjud emas. Iltimos e'tborli bo'ling!");
-      deleteUserFromList();
     }
-
   }
 
 }
