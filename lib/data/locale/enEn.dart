@@ -23,6 +23,6 @@ const Map<String, String> en = {
   "userPassword":"Please enter a password\n",
   "addedWords": "Added Words By User",
   "searchedWords": "Searched Words By User",
-  "checkWAI": "Check With AI"
+  "checkWAI": "Check With AI",
   "logOut":"Are you sure you want to LOG OUT?\n",
 };

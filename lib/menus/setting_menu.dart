@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:console_translate_app/menus/home_menu.dart';
+import 'package:console_translate_app/services/navigation_service.dart';
 
 import '../services/language_service.dart';
 import 'main_menu.dart';
@@ -14,15 +15,19 @@ class SettingMenu extends Menu{
     switch(press){
       case "1":{
         LanguageService.setLanguage = Language.uz;
+        await Navigator.push(HomeMenu());
       }
-      break;
+
       case "2":{
         LanguageService.setLanguage = Language.ru;
+        await Navigator.push(HomeMenu());
       }
-      break;
+
       case "3":{
         LanguageService.setLanguage = Language.en;
+        await Navigator.push(HomeMenu());
       }
+
       default: build();
     }
   }
