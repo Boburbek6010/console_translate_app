@@ -37,3 +37,22 @@ class IOService{
 
 
 }
+
+
+extension Str_ex on String{
+  int? parsing(){
+    int? a = int.tryParse(this);
+    if(a == null) {
+      while(a==null){
+        print("incorrect number; try again!");
+        a = int.tryParse(stdin.readLineSync()!);
+      }
+      print(a);
+      return a;
+    }else{
+      print(a);
+      return a;
+    }
+  }
+
+}

@@ -1,6 +1,6 @@
-import 'dart:io';
 
 import 'package:console_translate_app/services/extension_service.dart';
+import 'package:console_translate_app/services/io_services.dart';
 import 'package:translator/translator.dart';
 
 import '../models/new_word_model.dart';
@@ -39,22 +39,26 @@ Future<void> dAddedWords (
   printBeginning();
   print("\t\t\t${"Check With AI Technology".tr}");
   print(" |                                              |");
-  for(int i = words.length-1; i>=0; i--){
+  for(int i = 0; i< words.length; i++){
     print("\t\t\t${i+1}. ${words[i]}");
   }
   printVoid();
   print(" |          \t 0. Main Menu 🔙");
   printVoid();
   print(" |______________________________________________|");
-  print("Enter a number");
-  int n = int.parse(stdin.readLineSync()!)-1;
-  checkProcess(word: words[n], trans: tr[n], to: to[n], from: from[n]);
+  IOService.write("\n\tEnter a number ---> ");
+  int n = IOService.read().parsing()!;
+  while(n > words.length){
+    n = IOService.read().parsing()!;
+  }
+  n--;
+  await checkProcess(word: words[n], trans: tr[n], from: from[n], to: to[n]);
 
 }
 
 Future<void> checkProcess({ required String word, required String trans, required String to, required String from}) async{
   bool match = false;
-  Translation gtr = await word.translate(from: from, to: to);
+  Translation gtr = await word.translate(from: to, to: from);
   if(gtr.toString().toLowerCase() == trans.toLowerCase()) match = true;
   displayCheckResult(word: word, translation: trans, gtr: gtr.toString().toLowerCase(), match: match);
 }
@@ -66,7 +70,7 @@ void displayCheckResult({
   required bool match
   }){
   printBeginning();
-  pBold(" \t\t\t\t\t${word.toUpperCase()}");
+  pBold(" \t\t\t\t  << ${word.toUpperCase()} >>\n");
   pRed("    User's version:                     ");
   pRed("           \t\t$translation");
   print(" |----------------------------------------------|");
@@ -76,12 +80,11 @@ void displayCheckResult({
   print(" |   Result:                                    |");
   if(match){
     pGreen("\n\t User's version and AI version");
-    pGreen(" \t\t\tMATCHES! \n");
+    pGreen(" \t\t\t     MATCHES! \n");
   }else{
     pRed("\n\t User's version and AI version ");
-    pRed("\t\t\tDOES NOT MATCH!\n");
+    pRed(" \t\t\t      DOES NOT MATCH!\n");
   }
-  print(" |            1. Main Menu 🔙                   |");
+  print(" |          1. Main Menu 🔙                     |");
   printExit();
 }
-
