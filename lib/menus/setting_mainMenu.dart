@@ -1,6 +1,7 @@
 
 import 'dart:io';
 
+import 'package:console_translate_app/menus/home_menu.dart';
 import 'package:console_translate_app/menus/logOut_menu.dart';
 import 'package:console_translate_app/menus/deleteAccaunt_menu.dart';
 import 'package:console_translate_app/menus/main_menu.dart';
@@ -15,14 +16,23 @@ class SettingMainMenu extends Menu{
     print("Tanlang: ");
     int choice = int.parse(stdin.readLineSync()!);
     switch(choice){
-      case 1:
-        await Navigator.push(DeleteAccountMenu());
-      case 2:
-    ///settings in main menu 2
-      case 3:
-      await Navigator.push(LogOutMenu());
-      case 4:
-    ///settings in main menu 4
+        case 1:{
+         await Navigator.push(DeleteAccountMenu());
+         break;
+        }
+        case 2:{
+          await Navigator.push(LogOutMenu());
+          break;
+          }
+          case 3:{
+            displayMainMenu();
+          await Navigator.push(Choices());
+          break;
+        }
+      case 0:
+        {
+          exit(0);
+        }
       default:
         print("Noto'g'ri raqam kiritildi");
         build();

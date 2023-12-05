@@ -1,12 +1,13 @@
 import 'dart:io';
 
+import 'package:console_translate_app/menus/authenfication_menu.dart';
 import 'package:console_translate_app/menus/setting_menu.dart';
 import 'package:console_translate_app/menus/users_information_list_menu.dart';
 import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/ui_services.dart';
 
 import '../services/navigation_service.dart';
-import 'authenfication_menu.dart';
+import 'delete_incorrect_words_menu.dart';
 import 'main_menu.dart';
 
 class AdminMenu extends Menu{
@@ -19,8 +20,13 @@ class AdminMenu extends Menu{
       }
       break;
       case "2":{
+        await Navigator.push(DeleteIncorrectWords());
+      }
+      case "3":{
         await Navigator.push(AuthenficationMenu());
       }
+      case "0":
+        exit(0);
       default: build();
     }
   }
@@ -34,7 +40,4 @@ class AdminMenu extends Menu{
 
     await selectMenu(press);
   }
-
-
-
 }

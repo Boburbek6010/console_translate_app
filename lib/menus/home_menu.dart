@@ -4,7 +4,9 @@ import 'package:console_translate_app/menus/authenfication_menu.dart';
 import 'package:console_translate_app/menus/setting_mainMenu.dart';
 import 'package:console_translate_app/menus/setting_menu.dart';
 import 'package:console_translate_app/services/extension_service.dart';
+import 'package:console_translate_app/services/io_services.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
+import '../services/io_services.dart';
 import 'addNewWord_menu.dart';
 import 'dictionary_menu.dart';
 import 'history_menu.dart';
@@ -22,14 +24,16 @@ class HomeMenu extends Menu{
       case "2":{
         await Navigator.push(AuthenficationMenu());
       }
-      default: build();
+      default:
+        IOService.write("Iltimos faqat mavjud variantni kiriting!\n");
+        build();
     }
   }
 
   @override
   Future<void> build()async{
     print("welcome".tr);
-    print("1. ${"setting".tr}");
+    print("1. ${"ChangeLan".tr}");
     print("2. ${"start".tr}");
 
     String press = stdin.readLineSync() ?? "";
@@ -45,22 +49,27 @@ class Choices extends Menu {
 
   @override
   Future<void> build() async {
-    print('Tanlang: '.tr);
+    IOService.write('choose'.tr);
     int choice = int.parse(stdin.readLineSync()!);
     switch (choice) {
       case 0:
         exit(0);
       case 1:
         await Navigator.push(AddNewWord());
+        break;
       case 2:
         await Navigator.push(HistoryMenu());
+        break;
       case 3:
         await Navigator.push(DictionaryMenu());
+        break;
       case 4:
        await Navigator.push(SettingMainMenu());
+       break;
       default:
-        print("Bunday raqamdagi menu yo'q, qaytadan urining");
+        print("tryAgain");
         build();
+        break;
     }
   }
 }

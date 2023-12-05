@@ -1,5 +1,6 @@
 import 'package:console_translate_app/menus/admin_menu.dart';
 import 'package:console_translate_app/models/user_auth.dart';
+import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/io_services.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
 import 'package:console_translate_app/services/network_service.dart';
@@ -24,7 +25,9 @@ class UsersInformationListMenu extends Menu{
   @override
   Future<void> build()async{
     await userListShow();
-    IOService.write("Bo'limni tanlang!\n1.Userni ochirish.\n2.Ortga qaytish.\n");
+    IOService.write("chooseFT".tr);
+    IOService.write("deleteUser".tr);
+    IOService.write("goBack".tr);
     String press =IOService.read();
     await selectMenu(press);
   }
@@ -32,30 +35,32 @@ class UsersInformationListMenu extends Menu{
     String data =  await NetworkService.getData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth);
     List<UserAuth> list = userListFromData(data);
     for (int i = 0; i<list.length; i++) {
-      print("username: ${list[i].username}, password: ${list[i].password}, phone number: ${list[i].phoneNum} id: ${list[i].id}\n");
+      print("${i+1}.username: ${list[i].username}, phone number: ${list[i].phoneNum} id: ${list[i].id}\n");
     }
   }
   Future<void> deleteUserFromList()async{
-    print("Ochirmoqchi bo'lgan user idsini kiriting:");
-    String idChecker = IOService.read();
+    print("enterUser".tr);
+    String? idChecker = IOService.read();
+    int? idChekerInt = int.tryParse(idChecker);
     int counter = 0;
     String data =  await NetworkService.getData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth);
     List<UserAuth> list = userListFromData(data);
-    list.forEach((element) {
-      if(idChecker == element.id){
-        counter++;
+    if(idChekerInt == null || idChekerInt > list.length){
+      print("enterOnlyNum".tr);
+      deleteUserFromList();
+    }else{
+      for (int i=0;  i<list.length; i++) {
+        if(list[idChekerInt-1] == list[i]){
+          counter++;
+        }
       }
     }
-    );
-    if(counter!=0){
-      await NetworkService.deleteData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth, idChecker);
-      print("User muvaffaqiyatli ochirildi!");
-      await Navigator.push(AdminMenu());
-    }else{
-      print("Unday id raqamli user mavjud emas. Iltimos e'tborli bo'ling!");
-      deleteUserFromList();
-    }
 
+    if(counter!=0){
+      await NetworkService.deleteData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth, list[idChekerInt!-1].id);
+      print("successDeleteUser".tr);
+      await Navigator.push(AdminMenu());
+    }
   }
 
 }
