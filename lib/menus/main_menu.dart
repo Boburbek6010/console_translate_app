@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:console_translate_app/models/language_model.dart';
 import 'package:console_translate_app/services/network_service.dart';
 import 'package:console_translate_app/services/ui_services.dart';
 import '../models/history_of_words.dart';
@@ -42,7 +43,8 @@ void preventNull(String? string, String action){
 }
 
 bool checkLangContain(String lang){
-  return true;
+  if(LanguageList.contains(lang)) return true;
+  else return false;
 }
 
 

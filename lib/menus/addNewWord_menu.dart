@@ -59,7 +59,18 @@ Future<void> addNewWordProcess(List<String> answers) async{
     "translation" : answers[3],
     "description" : answers[4],
   };
+  while(!checkLangContain(newWord["currentLang"]!)){
+    stdout.write("Tanlangan til noto'g'ri kiritilgan! Qaytadan kiriting! ${"fromLang".tr}");
+    newWord["currentLang"] = stdin.readLineSync()!;
+  }
+
+  while(!checkLangContain(newWord["desiredLang"]!)){
+    stdout.write(" til noto'g'ri kiritilgan! Qaytadan kiriting! ${"toLang".tr}");
+    newWord["desiredLang"] = stdin.readLineSync()!;
+  }
+
   await NetworkService.postData(newWord, NetworkService.baseUrlWord, NetworkService.apiNewWord);
   displayNewWord(word: newWord["word"]!, translation: newWord["translation"]!, fromLang: newWord["currentLang"]!, toLang: newWord["desiredLang"]!, description: newWord["description"]!);
+
 }
 

@@ -36,6 +36,17 @@ Future<void> translateWordProcess(List<String> answers) async {
   String fromLang = answers[0];
   String toLang = answers[1];
   String word = answers[2];
+
+  while(!checkLangContain(fromLang)){
+    stdout.write("Tanlangan til noto'g'ri kiritilgan! Qaytadan kiriting! ${"fromLang".tr}");
+    fromLang = stdin.readLineSync()!;
+  }
+
+  while(!checkLangContain(toLang)){
+    stdout.write(" til noto'g'ri kiritilgan! Qaytadan kiriting! ${"toLang".tr}");
+    toLang = stdin.readLineSync()!;
+  }
+
   translate(word: word, fromLang: fromLang, toLang: toLang);
   Map<String, String> searchedWord = {"searchedWord": word};
   await NetworkService.postData(searchedWord, NetworkService.baseUrlWord, NetworkService.apiWord);

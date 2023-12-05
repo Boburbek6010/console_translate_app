@@ -12,16 +12,14 @@ const Map<String, String> en = {
    "word:" : "Enter the word:\n",
   "translation:": "Enter the translation:\n",
    "description" : "Enter a description of the word\n",
-  "adminUserName": "Please enter admin username:\n",
-   "adminPassword": "Please enter the admin password:\n",
- "succesfullyEnteredA" : "Admin successfully logged in\n",
-  "tryAgain": "Enter wrong, try again\n",
-  "choose" : "Choose\n",
-  "notRegistered": "You are not registered!\n",
-  "loginSuccessfully": "Login successful!\n",
-  "userName": "Please enter your username:\n",
-  "userPassword":"Please enter a password\n",
-  "addedWords": "Added Words By User",
-  "searchedWords": "Searched Words By User",
-  "checkWAI": "Check With AI"
+  "Iltimos, admin usernameni kiriting:": "Please enter admin username:\n",
+   "Iltimos, admin passwordini kiriting:": "Please enter the admin password:\n",
+ "Admin muvofaqiyatli kirdi" : "Admin successfully logged in\n",
+  "Noto'g'ri kiritingiz, qayta urining": "Enter wrong, try again\n",
+  "Tanlang: " : "Choose\n",
+  "Siz ro'yxatdan o'tmagansiz!": "You are not registered!\n",
+  "Kirish muvaffaqiyatli!": "Login successful!\n",
+  "Iltimos, foydalanuvchi nomini kiriting:": "Please enter your username:\n",
+  "Iltimos password kiriting":"Please enter a password\n"
+
 };
