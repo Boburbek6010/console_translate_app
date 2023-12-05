@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:console_translate_app/menus/check_with_ai.dart';
 import 'package:console_translate_app/menus/home_menu.dart';
-import 'package:console_translate_app/menus/setting_menu.dart';
 import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/ui_services.dart';
 import 'package:translator/translator.dart';
@@ -35,7 +34,7 @@ class DictionaryMenu extends Menu{
     IOService.write("Tanlang:\n1.Global translate.\n2.Check with AI.\n3.Go back\n");
     String press = IOService.read();
     await selectMenu(press);
-    await translateWord();
+    // await translateWord();
 
   }
 }
