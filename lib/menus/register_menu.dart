@@ -3,7 +3,6 @@ import 'dart:io';
 
 
 import 'package:console_translate_app/menus/home_menu.dart';
-import 'package:console_translate_app/menus/user_menu.dart';
 import 'package:console_translate_app/models/user_auth.dart';
 import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
