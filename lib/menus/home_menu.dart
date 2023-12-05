@@ -5,6 +5,7 @@ import 'package:console_translate_app/menus/setting_mainMenu.dart';
 import 'package:console_translate_app/menus/setting_menu.dart';
 import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
+import '../services/io_services.dart';
 import 'addNewWord_menu.dart';
 import 'dictionary_menu.dart';
 import 'history_menu.dart';
@@ -22,7 +23,9 @@ class HomeMenu extends Menu{
       case "2":{
         await Navigator.push(AuthenficationMenu());
       }
-      default: build();
+      default:
+        IOService.write("Iltimos faqat mavjud variantni kiriting!\n");
+        build();
     }
   }
 
