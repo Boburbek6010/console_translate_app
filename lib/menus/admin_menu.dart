@@ -34,7 +34,4 @@ class AdminMenu extends Menu{
 
     await selectMenu(press);
   }
-
-
-
 }
