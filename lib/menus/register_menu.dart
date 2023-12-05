@@ -16,11 +16,16 @@ class RegisterMenu extends Menu {
   String usernamePost = "";
   String passwordPost = "";
   String phoneNumPost = "";
+  bool isNameCorrect = false;
 
   Future<void> checkData( ) async {
+
     await enterUsername();
-    await enterAndCheckPhoneNum();
-    await enterPassword();
+    if(isNameCorrect) {
+      await enterAndCheckPhoneNum();
+      await enterPassword();
+    }
+
 
     UserAuth userdata = UserAuth(id, password: passwordPost,
         phoneNum: phoneNumPost,
@@ -67,34 +72,39 @@ class RegisterMenu extends Menu {
     int counter1 = 0;
     print("askUsername".tr);
     String username = stdin.readLineSync()!;
-    String data = await NetworkService.getData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth);
-    List<UserAuth> userAuth = userListFromData(data);
-    for (int i = 0; i < userAuth.length; i++) {
-      if (userAuth[i].username == username) {
-        counter1++;
-      }
-    }
     for (int j = 0;j < username.length; j++) {
+      int? a = int.tryParse(username[0]);
       if (username[j] == " "){
         counter++;
-      }else if(username[0] is num){
+      }else if(a != null){
         print("First character of username cannot be a digit!");
-        enterUsername();
+        await enterUsername();
       }
     }
     if (username.length < 3 || username.length > 16) {
       print("Username 3ta belgidan kam va 16ta belgidan ko'p bo'lishi mumkin emas");
-      enterUsername();
+      await enterUsername();
     }else if (counter != 0) {
       print("Username can not contain white space");
-      enterUsername();
-    }else if(counter1 != 0){
-      print("Bu usernamedan allaqoachon foydalanilgan!");
-      enterUsername();
-    }
-    else{
-      print("Username qabul qilindi");
-      usernamePost = username;
+      await enterUsername();
+    }else{
+      String data = await NetworkService.getData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth);
+      List<UserAuth> userAuth = userListFromData(data);
+      for (int i = 0; i < userAuth.length; i++) {
+        if (userAuth[i].username == username) {
+          counter1++;
+        }
+      }
+      if(counter1 == 0){
+        print("Username qabul qilindi");
+        usernamePost = username.toLowerCase();
+        isNameCorrect = true;
+      }else if(counter1 != 0){
+        print("Bu usernamedan allaqoachon foydalanilgan!");
+        await enterUsername();
+      }else{
+        await enterUsername();
+      }
     }
 
   }
