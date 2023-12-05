@@ -73,7 +73,7 @@ required String toLang,
   print(" |----------------------------------------------|");
   if (description != null) {
     pGreen("     Description:");
-    pGreen("     $description");
+    pGreen("     \t\t$description");
     printVoid();
   }else{
     printVoid();
@@ -152,7 +152,7 @@ void historyMenuUi(){
   List<String> actionsH = [
     "1. Searched words",
     "2. Added words",
-    "3. Go back"
+    "3. Go back🔙"
   ];
   String historyM = "History menu";
   displayMenu(actionsH, historyM);
