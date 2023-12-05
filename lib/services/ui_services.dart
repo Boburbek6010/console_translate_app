@@ -105,10 +105,10 @@ void displayListofWords(List<String> words, String menu){
   print(" |               History📜                      |");
   print("             $menu");
   for(int i = words.length-1; i>=0; i--){
-    print("\t\t⭐️ ${words[i]}");
+    print("\t\t\t⭐️ ${words[i]}");
   }
   printVoid();
-  print(" \t\t1. Main Menu 🔙");
+  print(" \t\t\t1. Main Menu 🔙");
   printExit();
 }
 

@@ -8,6 +8,7 @@ import 'package:translator/translator.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
 
 
+import '../models/language_model.dart';
 import '../services/io_services.dart';
 import '../services/network_service.dart';
 import 'main_menu.dart';
@@ -71,6 +72,7 @@ Future<void> translateWordProcess(List<String> answers) async {
     toLang = IOService.read();
   }
 
+
   translate(word: word, fromLang: fromLang, toLang: toLang);
   Map<String, String> searchedWord = {"searchedWord": word};
   await NetworkService.postData(searchedWord, NetworkService.baseUrlWord, NetworkService.apiWord);
@@ -88,4 +90,10 @@ Future<void> translate ({
       fromLang: fromLang,
       toLang: toLang
   );
+}
+
+
+bool checkLangContain(String lang){
+  if(LanguageList.contains(lang)) return true;
+  else return false;
 }
