@@ -10,6 +10,7 @@ import '../services/network_service.dart';
 import '../services/ui_services.dart';
 import 'main_menu.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
+import 'package:console_translate_app/services/io_services.dart';
 
 class HistoryMenu extends Menu{
   static const id = "/history_menu";
@@ -33,14 +34,14 @@ class HistoryMenu extends Menu{
        break;
      }
      default:
-       print("Noto'g'ri kiritingiz, qayta urining".tr);
+       IOService.write("tryAgain".tr);
        build();
    }
 }
   @override
   Future<void> build() async{
     historyMenuUi();
-    print('choose'.tr);
+    IOService.write('choose'.tr);
     String choice = IOService.read();
     await selectMenu(choice);
   }

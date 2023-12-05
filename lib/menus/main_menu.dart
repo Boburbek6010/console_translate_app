@@ -47,7 +47,7 @@ Future<void> selectMenu(String press)async{
         break;
       }
     default:
-      print("Noto'g'ri kiritingiz, qayta urining".tr);
+     IOService.write("tryAgain".tr);
       await displayHistory();
 
   }

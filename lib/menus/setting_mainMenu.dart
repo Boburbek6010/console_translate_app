@@ -25,8 +25,13 @@ class SettingMainMenu extends Menu{
           break;
           }
           case 3:{
+            displayMainMenu();
           await Navigator.push(Choices());
           break;
+        }
+      case 0:
+        {
+          exit(0);
         }
       default:
         print("Noto'g'ri raqam kiritildi");

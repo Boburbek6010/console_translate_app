@@ -19,10 +19,10 @@ class LogInMenu extends Menu {
     bool usernameExists = await LogInMenu.checkMap(username, password);
 
     if (usernameExists == false) {
-      print("Siz ro'yxatdan o'tmagansiz!".tr);
+      IOService.write("notRegistered".tr);
       await Navigator.push((UserMenu()));
     }else {
-      print("Kirish muvaffaqiyatli!".tr);
+      IOService.write("loginSuccessfully".tr);
       /// Navigate to the main menu
       displayMainMenu();
       await Navigator.push(Choices());
@@ -32,10 +32,10 @@ class LogInMenu extends Menu {
 
   @override
   Future<void> build() async {
-    IOService.write('Iltimos, foydalanuvchi nomini kiriting --> '.tr);
-    String username = stdin.readLineSync()!;
-    IOService.write('Iltimos password kiriting --> '.tr);
-    String password = stdin.readLineSync()!;
+    print('userName'.tr);
+    String username = IOService.read();
+    print('userPassword'.tr);
+    String password = IOService.read();
     logIn(username, password);
   }
 
