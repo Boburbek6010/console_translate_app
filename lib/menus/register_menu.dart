@@ -7,6 +7,7 @@ import 'package:console_translate_app/models/user_auth.dart';
 import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
 import 'package:console_translate_app/services/network_service.dart';
+import 'package:console_translate_app/services/ui_services.dart';
 import 'main_menu.dart';
 
 
@@ -36,7 +37,7 @@ class RegisterMenu extends Menu {
       print("Password can not contain white space");
       enterPassword();
     } else {
-      print("Password qabul qilinmadi!");
+      pRed("Password qabul qilinmadi!");
       print("Password katta harf, son, kichik harfdan iborat bo'lishi va umumiy 8ta belgidan iborat bo'lishi kerak");
       enterPassword();
     }
@@ -65,7 +66,7 @@ class RegisterMenu extends Menu {
       print("Username can not contain white space");
       enterUsername();
     }else if(counter1 != 0){
-      print("Bu usernamedan allaqoachon foydalanilgan!");
+      print("Bu usernamedan allaqachon foydalanilgan!");
       enterUsername();
     }
     else{

@@ -4,6 +4,7 @@ import 'package:console_translate_app/menus/home_menu.dart';
 import 'package:console_translate_app/menus/user_menu.dart';
 import 'package:console_translate_app/models/user_auth.dart';
 import 'package:console_translate_app/services/extension_service.dart';
+import 'package:console_translate_app/services/io_services.dart';
 import 'package:console_translate_app/services/network_service.dart';
 import '../services/navigation_service.dart';
 import '../services/ui_services.dart';
@@ -31,9 +32,9 @@ class LogInMenu extends Menu {
 
   @override
   Future<void> build() async {
-    print('Iltimos, foydalanuvchi nomini kiriting:'.tr);
+    IOService.write('Iltimos, foydalanuvchi nomini kiriting --> '.tr);
     String username = stdin.readLineSync()!;
-    print('Iltimos password kiriting'.tr);
+    IOService.write('Iltimos password kiriting --> '.tr);
     String password = stdin.readLineSync()!;
     logIn(username, password);
   }

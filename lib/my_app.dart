@@ -1,12 +1,15 @@
 import 'package:console_translate_app/menus/dictionary_menu.dart';
+import 'package:console_translate_app/menus/history_menu.dart';
 import 'package:console_translate_app/services/language_service.dart';
 import 'menus/main_menu.dart';
 
 void main() {
   // addNewWord();
   // displayCheck();
-  translateWord();
+  // translateWord();
+  displayAddedWord();
 }
+
 
 class MyApp{
 
