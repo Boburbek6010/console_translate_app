@@ -1,5 +1,3 @@
-import 'package:console_translate_app/services/extension_service.dart';
-
 ///prints with border
 void pBorder(Object? value){
   print('\x1b[51m $value \x1b[0m');
@@ -30,31 +28,31 @@ void printBeginning(){
   print("  ______________________________________________  ");
   print(" |                                              | ");
   print(" |                                              | ");
-  pBold("|                  📚TranslateApp📚              | ");
+  pBold("|               📚Translate App📚             | ");
   print(" |                                              | ");
 
 }
 
 ///prints the bottom of the application
 void printExit() {
-  print(" |                   0. Exit ❌                  |");
+  print(" \t\t\t0. Exit ❌");
   printVoid();
-  print(" |_______________________________________________|");
+  print(" |______________________________________________|");
 }
 
 ///prints a void strings in order to fulfill the ui
 void printVoid(){
-  print(" |                                               |");
-  print(" |                                               |");
+  print(" |                                              |");
+  print(" |                                              |");
 }
 
 ///displays a menu
 void displayMenu(List<String> actions, String menuName) {
   printBeginning();
-  print("\t\t\t\t\t$menuName");
+  print("\t\t\t\t$menuName");
   printVoid(); printVoid();
   for (var element in actions) {
-    print("\t\t$element");
+    print("\t\t\t$element");
   }
   printExit();
 }
@@ -69,18 +67,18 @@ required String toLang,
  printBeginning();
   pRed("     $fromLang:");
   pRed("           $word");
-  print(" |-----------------------------------------------|");
+  print(" |----------------------------------------------|");
   pBlue("     $toLang:");
   pBlue("           $translation");
-  print(" |-----------------------------------------------|");
+  print(" |----------------------------------------------|");
   if (description != null) {
-    pGreen("Description".tr);
-    pGreen("     $description");
+    pGreen("     Description:");
+    pGreen("     \t\t$description");
     printVoid();
   }else{
     printVoid();
   }
-  print(" |       1. ${"mainMenu".tr}🔙                          |");
+  print(" \t\t\t1. Main Menu 🔙");
   printExit();
 }
 
@@ -104,13 +102,13 @@ void displayNewWord({
 ///displays the history of words that has been searched
 void displayListofWords(List<String> words, String menu){
   printBeginning();
-  print(" |               ${"historyMenu".tr}📜                      |");
+  print(" |               History📜                      |");
   print("             $menu");
   for(int i = words.length-1; i>=0; i--){
     print("\t\t⭐️ ${words[i]}");
   }
   printVoid();
-  print(" |               1. ${"mainMenu".tr}🔙              |");
+  print(" \t\t1. Main Menu 🔙");
   printExit();
 }
 
@@ -118,11 +116,12 @@ void displayListofWords(List<String> words, String menu){
 ///displays the setting menu
 void displaySettingMenu(){
   List<String> actions = [
-    "1. ${"deleteAccount".tr}",
-    "2. ${"LogOut".tr}\n",
-    "3. ${"mainMenu".tr}🔙"
+    "1. Delete Account",
+    "2. Log Out",
+    "\n",
+    "3. Main Menu 🔙 "
   ];
-  String menuName = "settingsMenu".tr;
+  String menuName = "Settings Menu";
 
   displayMenu(actions, menuName);
 }
@@ -130,32 +129,32 @@ void displaySettingMenu(){
 ///displays the main menu
 void displayMainMenu() {
   List<String> actions = [
-    "1. ${"AddNewWord".tr} ✅",
-    "2. ${"history".tr}📜",
-    "3. ${"dictionary".tr}🔎",
-    "4. ${"settings".tr}"
+    "1. Add new word ✅",
+    "2. History📜",
+    "3. Dictionary🔎",
+    "4. Settings"
   ];
-  String menu = "mainMenu".tr;
+  String menu = "Main Menu";
   displayMenu(actions, menu);
 }
 
 ///display admin menu ui
 void adminMenuUi(){
   List<String> actionsAdmin = [
-    "1. ${"usersInfo".tr}",
-    "2. ${"deleteWrongWords".tr}"
+    "1. Foydalanuvchi malumotlarini ko'rish",
+    "2. Yaroqsiz so'zlarni o'chirish"
   ];
-  String adminMenu = "adminMenu".tr;
+  String adminMenu = "Admin Menu";
   displayMenu(actionsAdmin, adminMenu);
 }
 
 void historyMenuUi(){
   List<String> actionsH = [
-    "1. ${"searchedWords".tr}",
-    "2. ${"addedWords".tr}",
-    "3. ${"goBack".tr}"
+    "1. Searched words",
+    "2. Added words",
+    "3. Go back🔙"
   ];
-  String historyM = "historyMenu".tr;
+  String historyM = "History menu";
   displayMenu(actionsH, historyM);
 }
 

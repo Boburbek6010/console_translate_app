@@ -34,19 +34,18 @@ Future<void> displayCheck() async{
   dAddedWords(words: words, tr: translates, from: froms, to: tos);
 }
 
-Future<void> dAddedWords(
+Future<void> dAddedWords (
     { required List<String> words, required List<String> tr, required List<String> from, required List<String> to}) async{
-  String checkWAi = "checkWAI".tr;
   printBeginning();
-  print("           ${checkWAi.toUpperCase()}");
-  print(" |                                        |");
+  print("\t\t\t${"Check With AI Technology".tr}");
+  print(" |                                              |");
   for(int i = words.length-1; i>=0; i--){
-    print("\t\t${i+1}. ${words[i]}");
+    print("\t\t\t${i+1}. ${words[i]}");
   }
   printVoid();
-  print(" |      0. Main Menu 🔙                 |");
+  print(" |          \t 0. Main Menu 🔙");
   printVoid();
-  print(" |______________________________________|");
+  print(" |______________________________________________|");
   print("Enter a number");
   int n = int.parse(stdin.readLineSync()!)-1;
   checkProcess(word: words[n], trans: tr[n], to: to[n], from: from[n]);
@@ -67,15 +66,14 @@ void displayCheckResult({
   required bool match
   }){
   printBeginning();
-  pBold(" \t\t\t\t$word");
-  print(" |                                      |");
+  pBold(" \t\t\t\t\t${word.toUpperCase()}");
   pRed("    User's version:                     ");
   pRed("           \t\t$translation");
-  print(" |--------------------------------------|");
+  print(" |----------------------------------------------|");
   pBlue("     AI version:");
   pBlue("           \t\t$gtr");
-  print(" |--------------------------------------|");
-  print(" |   Result:                            |");
+  print(" |----------------------------------------------|");
+  print(" |   Result:                                    |");
   if(match){
     pGreen("\n\t User's version and AI version");
     pGreen(" \t\t\tMATCHES! \n");
@@ -83,7 +81,7 @@ void displayCheckResult({
     pRed("\n\t User's version and AI version ");
     pRed("\t\t\tDOES NOT MATCH!\n");
   }
-  print(" |      1. Main Menu 🔙                 |");
+  print(" |            1. Main Menu 🔙                   |");
   printExit();
 }
 

@@ -74,6 +74,17 @@ Future<void> addNewWordProcess(List<String> answers) async {
     "translation": answers[3],
     "description": answers[4],
   };
+
+  while(!checkLangContain(newWord["currentLang"]!)){
+    IOService.write("Tanlangan til noto'g'ri kiritilgan! Qaytadan kiriting! ${"fromLang".tr}");
+    newWord["currentLang"] = IOService.read();
+  }
+
+  while(!checkLangContain(newWord["desiredLang"]!)){
+    IOService.write(" til noto'g'ri kiritilgan! Qaytadan kiriting! ${"toLang".tr}");
+    newWord["desiredLang"] = IOService.read();
+  }
+
   await NetworkService.postData(
       newWord, NetworkService.baseUrlWord, NetworkService.apiNewWord);
   displayNewWord(word: newWord["word"]!,
