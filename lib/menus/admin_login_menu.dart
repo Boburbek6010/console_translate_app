@@ -18,11 +18,11 @@ class AdminLoginMenu extends Menu{
   bool resultOfChecking = await AdminLoginMenu.checkAdminUsernamePassword(usernameAdmin, passwordAdmin);
 
   if(resultOfChecking == false){
-    print("Noto'g'ri kiritingiz, qayta urining".tr);
+    print("tryAgain".tr);
     await Navigator.push(AdminLoginMenu());
     }
    else {
-    print('Admin muvofaqiyatli kirdi!'.tr);
+    print('succesfullyEnteredA'.tr);
     ///Navigate admin actions
     await Navigator.push(AdminMenu());
     }
@@ -42,9 +42,9 @@ class AdminLoginMenu extends Menu{
   @override
   Future<void> build() async{
     ///Asking username and paaword of admin
-    print('Iltimos, admin usernameni kiriting: '.tr);
+    print('adminUserName'.tr);
     String usernameAdmin = stdin.readLineSync()!;
-    print('Iltimos, admin passwordini kiriting: '.tr);
+    print('adminPassword'.tr);
     String passwordAdmin = stdin.readLineSync()!;
     adminLogIn(usernameAdmin, passwordAdmin);
   }

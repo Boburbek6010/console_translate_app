@@ -29,16 +29,16 @@ class DeleteIncorrectWords extends Menu {
           break;
         }
       default:
-        IOService.write("Wrong");
+        IOService.write("tryAgain".tr);
         build();
     }
   }
   @override
   Future<void> build() async{
-    IOService.write("fromWhere:".tr);
+    IOService.write("chooseFT".tr);
     IOService.write("1. ${"fromSearchedWords".tr}");
     IOService.write("2. ${"fromAddedWords".tr}");
-    IOService.write("3. ${"Go back".tr}");
+    IOService.write("3. ${"goBack".tr}");
     String choice  = IOService.read();
     await selectMenuOfDeleteIncorrectWords(choice);
 

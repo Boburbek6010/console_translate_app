@@ -38,8 +38,8 @@ Future<void> dAddedWords(
     { required List<String> words, required List<String> tr, required List<String> from, required List<String> to}) async{
   String checkWAi = "checkWAI".tr;
   printBeginning();
-  print(" |          ${checkWAi.toUpperCase()}              |");
-  print(" |                                 |");
+  print("           ${checkWAi.toUpperCase()}");
+  print(" |                                        |");
   for(int i = words.length-1; i>=0; i--){
     print("\t\t${i+1}. ${words[i]}");
   }

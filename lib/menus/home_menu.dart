@@ -4,6 +4,7 @@ import 'package:console_translate_app/menus/authenfication_menu.dart';
 import 'package:console_translate_app/menus/setting_mainMenu.dart';
 import 'package:console_translate_app/menus/setting_menu.dart';
 import 'package:console_translate_app/services/extension_service.dart';
+import 'package:console_translate_app/services/io_services.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
 import 'addNewWord_menu.dart';
 import 'dictionary_menu.dart';
@@ -45,7 +46,7 @@ class Choices extends Menu {
 
   @override
   Future<void> build() async {
-    print('Tanlang: '.tr);
+    IOService.write('choose'.tr);
     int choice = int.parse(stdin.readLineSync()!);
     switch (choice) {
       case 0:
@@ -63,7 +64,7 @@ class Choices extends Menu {
        await Navigator.push(SettingMainMenu());
        break;
       default:
-        print("Bunday raqamdagi menu yo'q, qaytadan urining");
+        print("tryAgain");
         build();
         break;
     }

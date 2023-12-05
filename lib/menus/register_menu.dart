@@ -30,14 +30,14 @@ class RegisterMenu extends Menu {
       }}
     if (password.length >= 8 && password.contains(hasUpperCase) &&
         password.contains(hasLowerCase) && password.contains(hasDigit)) {
-      print("Password qabul qilindi");
+      print("acceptedPassword".tr);
       passwordPost = password;
     }else if (counter > 0) {
-      print("Password can not contain white space");
+      print("passwordNotContainSpace".tr);
       enterPassword();
     } else {
-      print("Password qabul qilinmadi!");
-      print("Password katta harf, son, kichik harfdan iborat bo'lishi va umumiy 8ta belgidan iborat bo'lishi kerak");
+      print("notAcceptedPassword".tr);
+      print("passwordCUcLc8ch".tr);
       enterPassword();
     }
   }
@@ -59,17 +59,17 @@ class RegisterMenu extends Menu {
       }
     }
     if (username.length < 3 || username.length > 16) {
-      print("Username 3ta belgidan kam va 16ta belgidan ko'p bo'lishi mumkin emas");
+      print("username3ch16chNot".tr);
       enterUsername();
     }else if (counter != 0) {
-      print("Username can not contain white space");
+      print("usernameNotContainSpace".tr);
       enterUsername();
     }else if(counter1 != 0){
-      print("Bu usernamedan allaqoachon foydalanilgan!");
+      print("alreadyHave".tr);
       enterUsername();
     }
     else{
-      print("Username qabul qilindi");
+      print("acceptedUsername".tr);
       usernamePost = username;
     }
 
@@ -83,14 +83,14 @@ class RegisterMenu extends Menu {
     if (phoneNum.length == 9) {
       int? phoneNumberInt = int.tryParse(phoneNum);
       if (phoneNumberInt == null) {
-        print("Faqat raqam kiriting");
+        print("enterOnlyNum".tr);
         enterAndCheckPhoneNum();
       } else {
-        print("Qabul qilindi");
+        print("acceptedPN".tr);
         phoneNumPost = phoneNum;
       }
     } else {
-      print("Faqat 9ta raqam kiriting!");
+      print("only9digit".tr);
       enterAndCheckPhoneNum();
     }
   }

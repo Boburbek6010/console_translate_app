@@ -16,16 +16,16 @@ class DeleteAccountMenu extends Menu {
     bool passwordCheck = await DeleteAccountMenu.check( password);
 
     if (passwordCheck == false) {
-      print("Wrong password".tr);
+      print("tryAgain".tr);
       await Navigator.push(SettingMainMenu());
     }else {
-      print("Successfully deleted".tr);
+      print("successDelete".tr);
       await Navigator.push(AuthenficationMenu());
     }
   }
   @override
   Future<void> build() async {
-    IOService.write("Passwordingizni kiriting: ");
+    IOService.write("enterPassword".tr);
     String password = IOService.read();
     await  checkPassword(password);
   }

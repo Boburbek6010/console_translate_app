@@ -1,5 +1,6 @@
 
 import 'package:console_translate_app/menus/main_menu.dart';
+import 'package:console_translate_app/services/extension_service.dart';
 
 import '../models/history_of_words.dart';
 import '../services/io_services.dart';
@@ -28,7 +29,9 @@ class DeleteSearchedWords extends Menu {
   @override
   Future<void> build() async{
     await searchedWordList();
-    IOService.write("Tanlang:\n1.So'zni ochirish.\n2.Ortga qaytish.\n");
+    IOService.write("chooseFT".tr);
+    IOService.write("deleteWords".tr);
+    IOService.write("goBack".tr);
     String press =IOService.read();
     await selectMenu(press);
   }
@@ -42,14 +45,14 @@ class DeleteSearchedWords extends Menu {
  }
 
   Future<void> deleteWordsFromList()async{
-    print("Ochirmoqchi bo'lgan so'zingizning tartib raqamini kiriting:");
+    IOService.write("enterWordsSD".tr);
     String? idChecker = IOService.read();
     int? idChekerInt = int.tryParse(idChecker);
     int counter = 0;
     String data =  await NetworkService.getData(NetworkService.baseUrlWord, NetworkService.apiWord);
     List<SearchedWord> list = swFromJson(data);
     if(idChekerInt == null || idChekerInt > list.length){
-      print("Iltimos faqat son kiriting");
+      IOService.write("enterOnlyNum".tr);
       deleteWordsFromList();
     }else{
       for (int i=0;  i<list.length; i++) {
@@ -61,7 +64,7 @@ class DeleteSearchedWords extends Menu {
 
     if(counter!=0){
       await NetworkService.deleteData(NetworkService.baseUrlWord, NetworkService.apiWord, list[idChekerInt!-1].id);
-      print("So'z  muvaffaqiyatli ochirildi!");
+      IOService.write("deleteWords".tr);
       await build();
     }
   }
