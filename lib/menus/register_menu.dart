@@ -73,40 +73,44 @@ class RegisterMenu extends Menu {
     int counter1 = 0;
     print("createUsername".tr);
     String username = stdin.readLineSync()!;
-    for (int j = 0;j < username.length; j++) {
-      int? a = int.tryParse(username[0]);
-      if (username[j] == " "){
-        counter++;
-      }else if(a != null){
-        print("firsCharUser".tr);
-        await enterUsername();
-      }
-    }
-    if (username.length < 3 || username.length > 16) {
-      print("username3ch16chNot".tr);
-      await enterUsername();
-    }else if (counter != 0) {
-      print("usernameNotContainSpace".tr);
+    int? a = int.tryParse(username[0]);
+    if(a != null){
+      print("firsCharUser".tr);
       await enterUsername();
     }else{
-      String data = await NetworkService.getData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth);
-      List<UserAuth> userAuth = userListFromData(data);
-      for (int i = 0; i < userAuth.length; i++) {
-        if (userAuth[i].username == username) {
-          counter1++;
-        }
-      }
-      if(counter1 == 0){
-        print("acceptedUsername".tr);
-        usernamePost = username.toLowerCase();
-        isNameCorrect = true;
-      }else if(counter1 != 0){
-        print("alreadyHave".tr);
+      if (username.length < 3 || username.length > 16) {
+        print("username3ch16chNot".tr);
         await enterUsername();
       }else{
-        await enterUsername();
+        for (int j = 0;j < username.length; j++) {
+          if (username[j] == " "){
+            counter++;
+          }
+        }
+        if (counter != 0) {
+          print("usernameNotContainSpace".tr);
+          await enterUsername();
+        }else{
+          String data = await NetworkService.getData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth);
+          List<UserAuth> userAuth = userListFromData(data);
+          for (int i = 0; i < userAuth.length; i++) {
+            if (userAuth[i].username == username) {
+              counter1++;
+            }
+          }
+          if(counter1 == 0){
+            print("acceptedUsername".tr);
+            usernamePost = username.toLowerCase();
+            isNameCorrect = true;
+          }else{
+            print("alreadyHave".tr);
+            await enterUsername();
+          }
+        }
       }
     }
+
+
 
   }
 
