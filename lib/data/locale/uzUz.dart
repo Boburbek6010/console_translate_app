@@ -3,7 +3,9 @@ const Map<String, String> uz = {
   "setting":"Sozlash menyusi",
   "exit":"Chiqish\n",
   "start":"Boshlash\n",
-  "askUsername":"Iltimos, foydalanuvchi nomingizni kiriting:\n ",
+  "createUsername":"Iltimos, foydalanuvchi nomini yarating: ",
+  "createPassword":"Iltimos, parol yarating: ",
+  "askUsername":"Iltimos, foydalanuvchi nomingizni kiriting: ",
   "askPhoneNumber":"Iltimos, telefon raqamingizni kiriting\nEstlatma: 9 ta raqamdan iborat bo'lsin\n",
   "askPassword":"Iltimos, parolingizni kiriting:\n ",
   "successfull":"Muvaffaqiyatli ro'yxatdan o'tdi!\n",
@@ -26,8 +28,8 @@ const Map<String, String> uz = {
   "checkWAI": "AI bilan tekshirish",
   "logOut":"Chiqishga ishonchingiz komilmi?\n",
   "ChangeLan" : "Tilni o'zgartirish\n",
-  "SignIn" : "Tizimga kirish\n",
-  "SignUp" : "Ro'yxatdan o'tish\n",
+  "SignIn" : "Tizimga kirish",
+  "SignUp" : "Ro'yxatdan o'tish",
   "AddNewWord" : "Yangi so'z qo'shish\n",
   "history" : "Tarix\n",
   "dictionary" : "Lug'at\n",
@@ -64,6 +66,10 @@ const Map<String, String> uz = {
   "only9digit":"Faqat 9ta raqam kiriting!\n",
   "globTranslate":"Global tarjima\n",
   "dictionaryMenu":"Lug'at menusi\n",
+  "user":"Foydalanvchi",
+  "admin":"Admin",
+  "firsCharUser":"Foydalanuvchi nomining birinchi belgisi raqam bolishi mumkin emas!",
+
 
 
 

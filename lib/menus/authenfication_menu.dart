@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:console_translate_app/menus/admin_login_menu.dart';
 import 'package:console_translate_app/menus/main_menu.dart';
 import 'package:console_translate_app/menus/user_menu.dart';
+import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
 
 
@@ -26,8 +27,8 @@ class AuthenficationMenu extends Menu{
 
   @override
   Future<void> build() async{
-    print("1. USER");
-    print("2. ADMIN");
+    print("1.${"user".tr}");
+    print("2.${"admin".tr}");
 
     String press = stdin.readLineSync() ?? "";
 

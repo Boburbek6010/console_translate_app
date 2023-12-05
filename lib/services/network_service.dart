@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:console_translate_app/services/extension_service.dart';
 import 'package:http/http.dart';
 
 class NetworkService{
@@ -25,7 +26,7 @@ class NetworkService{
     Response response = await post(url, body: jsonEncode(body),
         headers: headers);
     if (response.statusCode == 200 || response.statusCode == 201) {
-      return "Siz muvaffaqiyatli ro'yxatdan o'tdingiz";
+      return "successfull".tr;
     }
     else {
       return "Server bilan bog'liq muammoalar mavjud!";
