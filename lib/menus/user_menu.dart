@@ -23,7 +23,7 @@ class UserMenu extends Menu{
         await Navigator.push(RegisterMenu());
       }
       default:
-        IOService.write("Iltimos faqat mavjud variantni kiriting!\n");
+        IOService.write("tryAgain".tr);
         build();
     }
   }

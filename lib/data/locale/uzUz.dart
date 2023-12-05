@@ -65,18 +65,4 @@ const Map<String, String> uz = {
   "globTranslate":"Global tarjima\n",
   "dictionaryMenu":"Lug'at menusi\n",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 };

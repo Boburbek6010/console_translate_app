@@ -25,7 +25,7 @@ class HomeMenu extends Menu{
         await Navigator.push(AuthenficationMenu());
       }
       default:
-        IOService.write("Iltimos faqat mavjud variantni kiriting!\n");
+        IOService.write("tryAgain".tr);
         build();
     }
   }

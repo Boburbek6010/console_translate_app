@@ -88,4 +88,21 @@ Future<void> translate ({
       fromLang: fromLang,
       toLang: toLang
   );
+
+}
+Future<void> selectMenu1(String press)async{
+  switch(press){
+    case "0":{
+      exit(0);
+    }
+    case "1":
+      {
+        displayMainMenu();
+        await Navigator.push(Choices());
+        break;
+      }
+    default:
+      IOService.write("tryAgain".tr);
+      await displayHistory();
+  }
 }
