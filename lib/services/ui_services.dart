@@ -28,31 +28,31 @@ void printBeginning(){
   print("  ______________________________________________  ");
   print(" |                                              | ");
   print(" |                                              | ");
-  pBold("|                  📚Translate App📚            | ");
+  pBold("|               📚Translate App📚             | ");
   print(" |                                              | ");
 
 }
 
 ///prints the bottom of the application
 void printExit() {
-  print(" |                   0. Exit ❌                  |");
+  print(" \t\t\t0. Exit ❌");
   printVoid();
-  print(" |_______________________________________________|");
+  print(" |______________________________________________|");
 }
 
 ///prints a void strings in order to fulfill the ui
 void printVoid(){
-  print(" |                                               |");
-  print(" |                                               |");
+  print(" |                                              |");
+  print(" |                                              |");
 }
 
 ///displays a menu
 void displayMenu(List<String> actions, String menuName) {
   printBeginning();
-  print("\t\t\t\t\t$menuName");
+  print("\t\t\t\t$menuName");
   printVoid(); printVoid();
   for (var element in actions) {
-    print("\t\t$element");
+    print("\t\t\t$element");
   }
   printExit();
 }
@@ -67,10 +67,10 @@ required String toLang,
  printBeginning();
   pRed("     $fromLang:");
   pRed("           $word");
-  print(" |-----------------------------------------------|");
+  print(" |----------------------------------------------|");
   pBlue("     $toLang:");
   pBlue("           $translation");
-  print(" |-----------------------------------------------|");
+  print(" |----------------------------------------------|");
   if (description != null) {
     pGreen("     Description:");
     pGreen("     $description");
@@ -78,7 +78,7 @@ required String toLang,
   }else{
     printVoid();
   }
-  print(" |      1. Main Menu 🔙                           |");
+  print(" \t\t\t1. Main Menu 🔙");
   printExit();
 }
 
@@ -108,7 +108,7 @@ void displayListofWords(List<String> words, String menu){
     print("\t\t⭐️ ${words[i]}");
   }
   printVoid();
-  print(" |               1. Main Menu 🔙                |");
+  print(" \t\t1. Main Menu 🔙");
   printExit();
 }
 

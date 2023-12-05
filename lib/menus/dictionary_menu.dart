@@ -33,7 +33,7 @@ class DictionaryMenu extends Menu{
   @override
   Future<void> build() async {
     IOService.write("Tanlang:\n1.Global translate.\n2.Check with AI.\n3.Go back\n");
-    String press =IOService.read();
+    String press = IOService.read();
     await selectMenu(press);
     await translateWord();
 
@@ -63,13 +63,13 @@ Future<void> translateWordProcess(List<String> answers) async {
   String word = answers[2];
 
   while(!checkLangContain(fromLang)){
-    stdout.write("Tanlangan til noto'g'ri kiritilgan! Qaytadan kiriting! ${"fromLang".tr}");
-    fromLang = stdin.readLineSync()!;
+    IOService.write("Tanlangan til noto'g'ri kiritilgan! Qaytadan kiriting! ${"fromLang".tr}");
+    fromLang = IOService.read();
   }
 
   while(!checkLangContain(toLang)){
-    stdout.write(" til noto'g'ri kiritilgan! Qaytadan kiriting! ${"toLang".tr}");
-    toLang = stdin.readLineSync()!;
+    IOService.write(" til noto'g'ri kiritilgan! Qaytadan kiriting! ${"toLang".tr}");
+    toLang = IOService.read();
   }
 
   translate(word: word, fromLang: fromLang, toLang: toLang);
@@ -82,6 +82,7 @@ Future<void> translate ({
   required String fromLang,
   required String toLang}) async{
   Translation translation = await word.translate(from: fromLang, to: toLang);
+
   displayTranslation(
       word: word,
       translation: translation.toString(),
