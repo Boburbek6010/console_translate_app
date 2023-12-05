@@ -8,6 +8,7 @@ import 'package:translator/translator.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
 
 
+import '../models/language_model.dart';
 import '../services/io_services.dart';
 import '../services/network_service.dart';
 import 'main_menu.dart';
@@ -88,7 +89,6 @@ Future<void> translate ({
       fromLang: fromLang,
       toLang: toLang
   );
-
 }
 Future<void> selectMenu1(String press)async{
   switch(press){
@@ -105,4 +105,10 @@ Future<void> selectMenu1(String press)async{
       IOService.write("tryAgain".tr);
       await displayHistory();
   }
+}
+
+
+bool checkLangContain(String lang){
+  if(LanguageList.contains(lang)) return true;
+  else return false;
 }

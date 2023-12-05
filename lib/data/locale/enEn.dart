@@ -3,7 +3,9 @@ const Map<String, String> en = {
   "setting":"Setting menu\n",
   "exit":"Exit\n",
   "start":"Start\n",
-  "askUsername":"Please enter your username:\n ",
+ "createUsername":"Please, create username: ",
+ "createPassword":"Please, create password: ",
+  "askUsername":"Please enter your username: ",
   "askPhoneNumber":"Please enter you phone number\nNote: It should be 9 digits\n",
   "askPassword":"Please enter your password:\n",
   "successfull":"Successfully registered!\n",
@@ -26,8 +28,8 @@ const Map<String, String> en = {
   "checkWAI": "Check With AI",
   "logOut":"Are you sure you want to LOG OUT?\n",
   "ChangeLan" : "Change Language\n",
-  "SignIn" : "Sign in\n",
-  "SignUp" : "Sign up\n",
+  "SignIn" : "Sign in",
+  "SignUp" : "Sign up",
   "AddNewWord" : "Add New Word\n",
   "history" : "History\n",
   "dictionary" : "Dictionary\n",
@@ -67,4 +69,9 @@ const Map<String, String> en = {
  "only9digit":"Just enter 9 numbers!\n",
  "globTranslate":"Global translate\n",
  "dictionaryMenu":"Dictionary Menu\n",
+ "user":"User",
+ "admin":"Admin",
+ "firsCharUser":"First character of username cannot be a digit!",
+
+
 };

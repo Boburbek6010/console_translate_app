@@ -107,9 +107,10 @@ void displayListofWords(List<String> words, String menu){
   print(" |               ${"historyMenu".tr}📜                      |");
   print("             $menu");
   for(int i = words.length-1; i>=0; i--){
-    print("\t\t⭐️ ${words[i]}");
+    print("\t\t\t⭐️ ${words[i]}");
   }
   printVoid();
+  print(" \t\t\t1. Main Menu 🔙");
   print(" |               1. ${"mainMenu".tr}🔙              |");
   printExit();
 }

@@ -43,7 +43,7 @@ class LogInMenu extends Menu {
     String data = await NetworkService.getData(NetworkService.baseUrlUserAuth, NetworkService.apiUserAuth);
     List<UserAuth> userAuth = userListFromData(data);
     for (int i = 0; i < userAuth.length; i++) {
-      if (userAuth[i].username == username && userAuth[i].password == password) {
+      if (userAuth[i].username == username.toLowerCase() && userAuth[i].password == password) {
         return true;
       }
     }
