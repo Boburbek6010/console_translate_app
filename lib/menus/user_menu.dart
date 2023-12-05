@@ -11,12 +11,12 @@ class UserMenu extends Menu{
 
   Future<void> selectWhoAreU(String press) async {
     switch(press){
-      case "I":{
+      case "1":{
         Navigator.push(LogInMenu());
       }
       break;
 
-      case "II":{
+      case "2":{
         await Navigator.push(RegisterMenu());
       }
       default: build();
@@ -25,8 +25,8 @@ class UserMenu extends Menu{
 
   @override
   Future<void> build() async{
-    print("I. LOG IN");
-    print("II. SIGN UP");
+    print("1. SIGN IN");
+    print("2. SIGN UP");
 
     String press = stdin.readLineSync() ?? "";
 

@@ -1,17 +1,42 @@
 import 'dart:io';
 
+import 'package:console_translate_app/menus/check_with_ai.dart';
+import 'package:console_translate_app/menus/home_menu.dart';
+import 'package:console_translate_app/menus/setting_menu.dart';
 import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/ui_services.dart';
 import 'package:translator/translator.dart';
+import 'package:console_translate_app/services/navigation_service.dart';
 
+
+import '../services/io_services.dart';
 import '../services/network_service.dart';
 import 'main_menu.dart';
 
 class DictionaryMenu extends Menu{
   static const id = "/dictionary_menu";
+  Future<void> selectMenu(String press) async {
+    switch(press){
+      case "1":{
+        await translateWord();
+      }
+      break;
+      case "2":{
+        await Navigator.push(CheckWAi());
+      }
+      case "3":{
+        await Navigator.push(Choices());
+      }
+      default: build();
+    }
+  }
   @override
   Future<void> build() async {
-   translateWord();
+    IOService.write("Tanlang:\n1.Global translate.\n2.Check with AI.\n3.Go back\n");
+    String press =IOService.read();
+    await selectMenu(press);
+    await translateWord();
+
   }
 }
 
