@@ -12,7 +12,9 @@ class CheckWAi extends Menu{
   static const id = "/history_menu";
 
   @override
-  Future<void> build() async {}
+  Future<void> build() async {
+    await displayCheck();
+  }
 }
 
 

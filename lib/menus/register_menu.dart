@@ -74,8 +74,6 @@ class RegisterMenu extends Menu {
     }
 
   }
-
-
   Future<void> enterAndCheckPhoneNum() async {
     print("askPhoneNumber".tr);
     stdout.write('+998');
@@ -94,7 +92,6 @@ class RegisterMenu extends Menu {
       enterAndCheckPhoneNum();
     }
   }
-
   Future<void> checkData( ) async {
     await enterUsername();
     await enterAndCheckPhoneNum();
