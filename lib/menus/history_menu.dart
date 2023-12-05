@@ -1,32 +1,48 @@
 
 import 'dart:io';
 
+import 'package:console_translate_app/menus/home_menu.dart';
 import 'package:console_translate_app/services/extension_service.dart';
+import 'package:console_translate_app/services/io_services.dart';
 
 import '../models/new_word_model.dart';
 import '../services/network_service.dart';
 import '../services/ui_services.dart';
 import 'main_menu.dart';
+import 'package:console_translate_app/services/navigation_service.dart';
 
 class HistoryMenu extends Menu{
   static const id = "/history_menu";
-
+ Future<void> selectMenu(String press) async{
+   switch(press){
+     case "0":{
+         exit(0);
+       }
+     case "1":
+       {
+        await displayHistory();
+         break;
+       }
+     case "2":{
+       await displayAddedWord();
+       break;
+     }
+     case "3":{
+       displayMainMenu();
+       await Navigator.push(Choices());
+       break;
+     }
+     default:
+       print("Noto'g'ri kiritingiz, qayta urining".tr);
+       build();
+   }
+}
   @override
   Future<void> build() async{
     historyMenuUi();
     print('choose'.tr);
-    int choice = int.parse(stdin.readLineSync()!);
-    switch(choice){
-      case 0:
-        exit(0);
-      case 1:
-       displayHistory();
-      case 2:
-        displayAddedWord();
-      default:
-        print("Noto'g'ri kiritingiz, qayta urining".tr);
-        build();
-    }
+    String choice = IOService.read();
+    await selectMenu(choice);
   }
 }
 

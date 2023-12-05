@@ -1,7 +1,13 @@
 import 'dart:io';
+import 'package:console_translate_app/services/extension_service.dart';
+import 'package:console_translate_app/services/io_services.dart';
 import 'package:console_translate_app/services/network_service.dart';
 import 'package:console_translate_app/services/ui_services.dart';
 import '../models/history_of_words.dart';
+import 'package:console_translate_app/services/navigation_service.dart';
+
+import 'home_menu.dart';
+
 
 
 abstract class Menu {
@@ -25,7 +31,28 @@ Future<void> displayHistory() async {
   }else{
     displayListofWords(searchedCWord,"addedWords");
   }
+  IOService.write("-->");
+  String choice = IOService.read();
+  selectMenu(choice);
 }
+Future<void> selectMenu(String press)async{
+  switch(press){
+    case "0":{
+      exit(0);
+    }
+    case "1":
+      {
+        displayMainMenu();
+        await Navigator.push(Choices());
+        break;
+      }
+    default:
+      print("Noto'g'ri kiritingiz, qayta urining".tr);
+      await displayHistory();
+
+  }
+}
+
 
 ///if the string is empty returns false
 bool checkEmpty(String word){

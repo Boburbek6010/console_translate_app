@@ -29,7 +29,7 @@ class HomeMenu extends Menu{
   @override
   Future<void> build()async{
     print("welcome".tr);
-    print("1. ${"setting".tr}");
+    print("1. ${"ChangeLan".tr}");
     print("2. ${"start".tr}");
 
     String press = stdin.readLineSync() ?? "";
@@ -52,15 +52,20 @@ class Choices extends Menu {
         exit(0);
       case 1:
         await Navigator.push(AddNewWord());
+        break;
       case 2:
         await Navigator.push(HistoryMenu());
+        break;
       case 3:
         await Navigator.push(DictionaryMenu());
+        break;
       case 4:
        await Navigator.push(SettingMainMenu());
+       break;
       default:
         print("Bunday raqamdagi menu yo'q, qaytadan urining");
         build();
+        break;
     }
   }
 }

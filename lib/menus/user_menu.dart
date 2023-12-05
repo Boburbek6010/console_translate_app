@@ -25,7 +25,7 @@ class UserMenu extends Menu{
 
   @override
   Future<void> build() async{
-    print("1. LOG IN");
+    print("1. SIGN IN");
     print("2. SIGN UP");
 
     String press = stdin.readLineSync() ?? "";

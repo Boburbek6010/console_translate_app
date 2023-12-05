@@ -25,34 +25,34 @@ void pBlue(Object? value){
 
 ///prints the beginning of the top of the application
 void printBeginning(){
-  print("  ______________________________________");
-  print(" |                                      | ");
-  print(" |                                      | ");
-  pBold("|          📚Translate App📚          | ");
-  print(" |                                      | ");
+  print("  ______________________________________________  ");
+  print(" |                                              | ");
+  print(" |                                              | ");
+  pBold("|               📚Translate App📚             | ");
+  print(" |                                              | ");
 
 }
 
 ///prints the bottom of the application
 void printExit() {
-  print(" |      0. Exit ❌                      |");
+  print(" \t\t\t0. Exit ❌");
   printVoid();
-  print(" |______________________________________|");
+  print(" |______________________________________________|");
 }
 
 ///prints a void strings in order to fulfill the ui
 void printVoid(){
-  print(" |                                      |");
-  print(" |                                      |");
+  print(" |                                              |");
+  print(" |                                              |");
 }
 
 ///displays a menu
 void displayMenu(List<String> actions, String menuName) {
   printBeginning();
-  print("\t\t\t\t\t$menuName");
+  print("\t\t\t\t$menuName");
   printVoid(); printVoid();
   for (var element in actions) {
-    print("\t\t$element");
+    print("\t\t\t$element");
   }
   printExit();
 }
@@ -67,10 +67,10 @@ required String toLang,
  printBeginning();
   pRed("     $fromLang:");
   pRed("           $word");
-  print(" |--------------------------------------|");
+  print(" |----------------------------------------------|");
   pBlue("     $toLang:");
   pBlue("           $translation");
-  print(" |--------------------------------------|");
+  print(" |----------------------------------------------|");
   if (description != null) {
     pGreen("     Description:");
     pGreen("     $description");
@@ -78,7 +78,7 @@ required String toLang,
   }else{
     printVoid();
   }
-  print(" |      1. Main Menu 🔙                 |");
+  print(" \t\t\t1. Main Menu 🔙");
   printExit();
 }
 
@@ -102,13 +102,13 @@ void displayNewWord({
 ///displays the history of words that has been searched
 void displayListofWords(List<String> words, String menu){
   printBeginning();
-  print(" |           History📜                  |");
+  print(" |               History📜                      |");
   print("             $menu");
   for(int i = words.length-1; i>=0; i--){
     print("\t\t⭐️ ${words[i]}");
   }
   printVoid();
-  print(" |      1. Main Menu 🔙                 |");
+  print(" \t\t1. Main Menu 🔙");
   printExit();
 }
 
@@ -117,10 +117,9 @@ void displayListofWords(List<String> words, String menu){
 void displaySettingMenu(){
   List<String> actions = [
     "1. Delete Account",
-    "2. Change Language",
-    "3. Log Out",
+    "2. Log Out",
     "\n",
-    "4. Main Menu 🔙 "
+    "3. Main Menu 🔙 "
   ];
   String menuName = "Settings Menu";
 
@@ -152,7 +151,8 @@ void adminMenuUi(){
 void historyMenuUi(){
   List<String> actionsH = [
     "1. Searched words",
-    "2. Added words"
+    "2. Added words",
+    "3. Go back"
   ];
   String historyM = "History menu";
   displayMenu(actionsH, historyM);
