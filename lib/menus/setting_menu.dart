@@ -34,9 +34,9 @@ class SettingMenu extends Menu{
 
   @override
   Future<void> build()async{
-    print("1. UZ");
-    print("2. RU");
-    print("3. EN");
+    print("1. UZ🇺🇿");
+    print("2. RU🇷🇺");
+    print("3. EN🇺🇸");
 
     String press = stdin.readLineSync() ?? "";
 

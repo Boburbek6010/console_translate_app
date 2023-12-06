@@ -30,7 +30,7 @@ void printBeginning(){
   print("  ______________________________________________  ");
   print(" |                                              | ");
   print(" |                                              | ");
-  pBold("|                  📚TranslateApp📚              | ");
+  pBold("|                  📚TranslateApp📚            | ");
   print(" |                                              | ");
 
 }
@@ -134,7 +134,7 @@ void displayMainMenu() {
     "1. ${"AddNewWord".tr} ✅",
     "2. ${"history".tr}📜",
     "3. ${"dictionary".tr}🔎",
-    "4. ${"settings".tr}"
+    "4. ${"settings".tr}⚙️"
   ];
   String menu = "mainMenu".tr;
   displayMenu(actions, menu);
@@ -143,8 +143,8 @@ void displayMainMenu() {
 ///display admin menu ui
 void adminMenuUi(){
   List<String> actionsAdmin = [
-    "1. ${"usersInfo".tr}",
-    "2. ${"deleteWrongWords".tr}"
+    "1. ${"usersInfo".tr} 📜",
+    "2. ${"deleteWrongWords".tr} 📝"
   ];
   String adminMenu = "adminMenu".tr;
   displayMenu(actionsAdmin, adminMenu);
