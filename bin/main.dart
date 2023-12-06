@@ -8,7 +8,7 @@ import 'package:console_translate_app/services/language_service.dart';
 
 Future<void> main() async {
   MyApp(
-    home: RegisterMenu(),
+    home: HomeMenu(),
     lang: Language.en,
     routes: {
       HomeMenu.id:HomeMenu(),
