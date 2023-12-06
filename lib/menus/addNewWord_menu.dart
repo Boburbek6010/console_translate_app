@@ -9,6 +9,7 @@ import 'package:console_translate_app/services/ui_services.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
 
 
+import '../models/language_model.dart';
 import '../services/network_service.dart';
 
 class AddNewWord extends Menu{
@@ -96,5 +97,11 @@ Future<void> addNewWordProcess(List<String> answers) async {
   String choice = IOService.read();
   await selectMenu(choice);
 }
+}
+
+
+bool checkLangContain(String lang){
+  if(LanguageList.contains(lang)) return true;
+  else return false;
 }
 
