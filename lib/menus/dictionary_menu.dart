@@ -35,7 +35,6 @@ class DictionaryMenu extends Menu{
     IOService.write("Tanlang:\n1.Global translate.\n2.Check with AI.\n3.Go back\n");
     String press = IOService.read();
     await selectMenu(press);
-    // await translateWord();
 
   }
 }
@@ -50,8 +49,7 @@ Future<void> translateWord() async {
   ];
   actions.forEach((e) {
     print(e);
-    String eh = stdin.readLineSync() ?? "";
-    if(checkEmpty(eh)) preventNull(eh, e);
+    String eh = IOService.read().preventNull();
     answers.add(eh);
   });
   translateWordProcess(answers);
