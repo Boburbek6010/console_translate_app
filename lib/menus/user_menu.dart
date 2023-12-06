@@ -6,6 +6,7 @@ import 'package:console_translate_app/menus/main_menu.dart';
 import 'package:console_translate_app/menus/register_menu.dart';
 import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
+import 'package:console_translate_app/services/ui_services.dart';
 
 import '../services/io_services.dart';
 
@@ -30,9 +31,9 @@ class UserMenu extends Menu{
 
   @override
   Future<void> build() async{
-    print("1. ${"SignIn".tr} ✅");
-    print("2. ${"SignUp".tr} ❎");
-
+    List<String> actions = ["1. ${"SignIn".tr} ✅","2. ${"SignUp".tr} ❎"];
+    displayMenu(actions, "");
+    IOService.write(" ---> ");
     String press = stdin.readLineSync() ?? "";
 
     await selectWhoAreU(press);

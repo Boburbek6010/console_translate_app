@@ -30,7 +30,7 @@ void printBeginning(){
   print("  ______________________________________________  ");
   print(" |                                              | ");
   print(" |                                              | ");
-  pBold("|                  📚TranslateApp📚            | ");
+  pBold("|                📚TranslateApp📚             | ");
   print(" |                                              | ");
 
 }
@@ -39,13 +39,13 @@ void printBeginning(){
 void printExit() {
   print("  \t\t\t0. Exit ❌");
   printVoid();
-  print(" |_______________________________________________|");
+  print(" |______________________________________________|\n");
 }
 
 ///prints a void strings in order to fulfill the ui
 void printVoid(){
-  print(" |                                               |");
-  print(" |                                               |");
+  print(" |                                              |");
+  print(" |                                              |");
 }
 
 ///displays a menu
@@ -80,7 +80,7 @@ required String toLang,
   }else{
     printVoid();
   }
-  print(" |       1. ${"mainMenu".tr}🔙                          |");
+  print(" \t\t\t1. ${"mainMenu".tr}🔙");
   printExit();
 }
 
@@ -104,14 +104,13 @@ void displayNewWord({
 ///displays the history of words that has been searched
 void displayListofWords(List<String> words, String menu){
   printBeginning();
-  print(" |               ${"historyMenu".tr}📜                      |");
+  print(" \t\t\t${"historyMenu".tr}📜");
   print("             $menu");
   for(int i = words.length-1; i>=0; i--){
     print("\t\t\t⭐️ ${words[i]}");
   }
   printVoid();
   print(" \t\t\t1. Main Menu 🔙");
-  print(" |               1. ${"mainMenu".tr}🔙              |");
   printExit();
 }
 
