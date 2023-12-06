@@ -17,11 +17,16 @@ class AuthenficationMenu extends Menu{
     switch(press){
       case "1":{
          await Navigator.push(UserMenu());
+         break;
       }
       break;
 
       case "2":{
         await Navigator.push(AdminLoginMenu());
+        break;
+      }
+      case "0":{
+        exit(0);
       }
       default: build();
     }
