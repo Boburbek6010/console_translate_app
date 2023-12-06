@@ -89,6 +89,11 @@ Future<void> translate ({
       fromLang: fromLang,
       toLang: toLang
   );
+  print("choose".tr);
+
+  String press = IOService.read();
+
+  await selectMenu1(press);
 }
 Future<void> selectMenu1(String press)async{
   switch(press){
