@@ -1,6 +1,10 @@
 
+import 'dart:io';
+
+import 'package:console_translate_app/menus/home_menu.dart';
 import 'package:console_translate_app/services/extension_service.dart';
 import 'package:console_translate_app/services/io_services.dart';
+import 'package:console_translate_app/services/navigation_service.dart';
 import 'package:translator/translator.dart';
 
 import '../models/new_word_model.dart';
@@ -11,11 +15,26 @@ import 'main_menu.dart';
 class CheckWAi extends Menu{
   static const id = "/history_menu";
 
+  Future<void> selectMenu(String press) async {
+    switch(press){
+      case "1":{
+        displayMainMenu();
+        await Navigator.push(Choices());
+      }
+      break;
+      case "0":{
+         exit(0);
+      }
+      default:
+        IOService.write("tryAgain".tr);
+        build();
+    }
+  }
+
   @override
   Future<void> build() async {
    await displayCheck();
   }
-
 }
 
 
@@ -87,4 +106,8 @@ void displayCheckResult({
   }
   print(" |          1. Main Menu 🔙                     |");
   printExit();
+  IOService.write("-->");
+  String press = IOService.read();
+  selectMenu(press);
+
 }
