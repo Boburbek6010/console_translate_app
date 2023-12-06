@@ -18,10 +18,11 @@ class DeleteSearchedWords extends Menu {
         await deleteWordsFromList();
         break;
       }
-      case"2":{
-        await Navigator.push(DeleteIncorrectWords());
-        break;
-      }
+      case"2":
+        {
+          await Navigator.push(DeleteIncorrectWords());
+          break;
+        }
       default: build();
     }
   }
@@ -29,9 +30,8 @@ class DeleteSearchedWords extends Menu {
   @override
   Future<void> build() async{
     await searchedWordList();
-    IOService.write("chooseFT".tr);
-    IOService.write("deleteWords".tr);
-    IOService.write("goBack".tr);
+    IOService.write("1.${"deleteWords".tr}");
+    IOService.write("2.${"goBack".tr}");
     String press =IOService.read();
     await selectMenu(press);
   }
