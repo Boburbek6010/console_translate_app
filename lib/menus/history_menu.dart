@@ -46,7 +46,22 @@ class HistoryMenu extends Menu{
     await selectMenu(choice);
   }
 }
-
+Future<void> selectMenu1(String press)async{
+  switch(press){
+    case "0":{
+      exit(0);
+    }
+    case "1":
+      {
+        displayMainMenu();
+        await Navigator.push(Choices());
+        break;
+      }
+    default:
+      IOService.write("tryAgain".tr);
+      await displayHistory();
+  }
+}
 
 Future<void> displayAddedWord() async {
   List<String> addedCWord = [];
@@ -63,6 +78,9 @@ Future<void> displayAddedWord() async {
   }else{
     displayListofWords(addedCWord,"addedWords".tr);
   }
+  IOService.write("-->");
+  String choice = IOService.read();
+  selectMenu1(choice);
 }
 
 

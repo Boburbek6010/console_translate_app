@@ -72,7 +72,6 @@ Future<void> translateWordProcess(List<String> answers) async {
     toLang = IOService.read();
   }
 
-
   translate(word: word, fromLang: fromLang, toLang: toLang);
   Map<String, String> searchedWord = {"searchedWord": word};
   await NetworkService.postData(searchedWord, NetworkService.baseUrlWord, NetworkService.apiWord);
@@ -90,6 +89,22 @@ Future<void> translate ({
       fromLang: fromLang,
       toLang: toLang
   );
+}
+Future<void> selectMenu1(String press)async{
+  switch(press){
+    case "0":{
+      exit(0);
+    }
+    case "1":
+      {
+        displayMainMenu();
+        await Navigator.push(Choices());
+        break;
+      }
+    default:
+      IOService.write("tryAgain".tr);
+      await displayHistory();
+  }
 }
 
 

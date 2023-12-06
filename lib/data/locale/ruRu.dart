@@ -4,7 +4,9 @@ const Map<String, String> ru = {
   "setting":"Меню настроек\n",
   "exit":"Выход\n",
   "start":"Начать\n",
-  "askUsername":"Пожалуйста, введите ваш логин:\n ",
+  "createUsername":"Пожалуйста, придумайте имя пользователя: ",
+  "createPassword":"Пожалуйста, придумайте пароль: ",
+  "askUsername":"Пожалуйста, введите ваш логин: ",
   "askPhoneNumber":"Пожалуйста, введите свой номер телефона\nПримечание: Оно должно состоять из 9 цифр.\n",
   "askPassword":"Пожалуйста введите ваш пароль:\n",
   "successfull":"Успешно зарегистрирован!\n",
@@ -26,9 +28,9 @@ const Map<String, String> ru = {
    "searchedWords": "Слова, найденные пользователем\n",
    "checkWAI": "Проверьте с ИИ\n",
    "logOut":"Вы действительно хотите выйти?\n",
-   "ChangeLan" : "Изменение языка\n",
-  "SignIn" : "Войти\n",
-  "SignUp" : "Зарегистрироваться\n",
+   "ChangeLan" : "Изменить язык\n",
+  "SignIn" : "Войти",
+  "SignUp" : "Зарегистрироваться",
   "AddNewWord" : "Добавить новое слово\n",
   "history" : "История\n",
   "dictionary" : "Словарь\n",
@@ -56,7 +58,7 @@ const Map<String, String> ru = {
   "adminMenu" : "Admin Menu\n",
   "successDelete": "Успешно удалено\n",
   "enterPassword" : "Введите ваш пароль\n",
-  "acceptedPassword" : "Password accepted\n",
+  "acceptedPassword" : "Пароль принят\n",
   "passwordNotContainSpace" : "Пароль не может содержать пробелов\n",
   "notAcceptedPassword" : "Пароль не принят\n",
   "passwordCUcLc8ch" : "Пароль должен содержать заглавную букву, цифру, строчную букву и всего 8 символов.\n",
@@ -68,6 +70,12 @@ const Map<String, String> ru = {
  "only9digit":"Просто введите 9 цифр!\n",
  "globTranslate":"Глобальный перевод\n",
  "dictionaryMenu":"Меню словаря\n",
+  "user":"Пользователь",
+  "admin":"Aдминистратор",
+ "firsCharUser":"Первым символом имени пользователя не может быть цифра!",
+
+
+
 
 
 
