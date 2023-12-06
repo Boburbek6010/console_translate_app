@@ -69,13 +69,13 @@ required String toLang,
  printBeginning();
   pRed("     $fromLang:");
   pRed("           $word");
-  print(" |-----------------------------------------------|");
+  print(" |----------------------------------------------|");
   pBlue("     $toLang:");
   pBlue("           $translation");
-  print(" |-----------------------------------------------|");
+  print(" |----------------------------------------------|");
   if (description != null) {
-    pGreen("Description".tr);
-    pGreen("     $description");
+    pGreen("   Description".tr);
+    pGreen("     \t\t$description");
     printVoid();
   }else{
     printVoid();
