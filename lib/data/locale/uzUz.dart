@@ -30,10 +30,10 @@ const Map<String, String> uz = {
   "ChangeLan" : "Tilni o'zgartirish\n",
   "SignIn" : "Tizimga kirish",
   "SignUp" : "Ro'yxatdan o'tish",
-  "AddNewWord" : "Yangi so'z qo'shish\n",
-  "history" : "Tarix\n",
-  "dictionary" : "Lug'at\n",
-  "settings" : "Sozlamalar\n",
+  "AddNewWord" : "Yangi so'z qo'shish",
+  "history" : "Tarix",
+  "dictionary" : "Lug'at",
+  "settings" : "Sozlamalar",
   "mainMenu" : "Asosiy menu\n",
   "goBack" : "Orqaga qaytish\n",
   "settingsMenu" : "Sozlamalar menusi\n",
@@ -69,6 +69,10 @@ const Map<String, String> uz = {
   "user":"Foydalanvchi",
   "admin":"Admin",
   "firsCharUser":"Foydalanuvchi nomining birinchi belgisi raqam bolishi mumkin emas!",
-
+  "yes":"Ha",
+  "no":"Yo'q",
+  "errorchosedfromlan":"Tarjima qilinadigan til noto'g'ri kiritilgan! Qaytadan kiriting!",
+  "errorchosedtolan":"Tarjima qilingan til noto'g'ri kiritilgan! Qaytadan kiriting!",
+  "awailableLangs":"Bu yerda siz ularning kalitlaridan foydalanishingiz mumkin bo'lgan mavjud tillar ro'yxati.",
 
 };

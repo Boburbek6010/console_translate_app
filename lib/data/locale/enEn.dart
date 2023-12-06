@@ -30,10 +30,10 @@ const Map<String, String> en = {
   "ChangeLan" : "Change Language\n",
   "SignIn" : "Sign in",
   "SignUp" : "Sign up",
-  "AddNewWord" : "Add New Word\n",
-  "history" : "History\n",
-  "dictionary" : "Dictionary\n",
-  "settings" : "Settings\n",
+  "AddNewWord" : "Add New Word",
+  "history" : "History",
+  "dictionary" : "Dictionary",
+  "settings" : "Settings",
   "mainMenu" : "Main Menu\n",
    "goBack" : "Go Back\n",
   "historyMenu" : "History Menu\n",
@@ -72,6 +72,10 @@ const Map<String, String> en = {
  "user":"User",
  "admin":"Admin",
  "firsCharUser":"First character of username cannot be a digit!",
-
+ "yes":"Yes",
+ "no":"No",
+ "errorchosedfromlan":"The selected (from) language was entered incorrectly! Enter again!",
+ "errorchosedtolan":"The selected (to) language was entered incorrectly! Enter again!",
+ "awailableLangs":"Here is available languages which you can use their keys",
 
 };
