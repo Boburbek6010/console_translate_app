@@ -25,9 +25,9 @@ class UsersInformationListMenu extends Menu{
   @override
   Future<void> build()async{
     await userListShow();
-    IOService.write("chooseFT".tr);
-    IOService.write("deleteUser".tr);
-    IOService.write("goBack".tr);
+    IOService.write("1.${"chooseFT".tr}");
+    IOService.write("2.${"deleteUser".tr}");
+    IOService.write("3.${"goBack".tr}");
     String press =IOService.read();
     await selectMenu(press);
   }

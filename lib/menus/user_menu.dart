@@ -30,8 +30,8 @@ class UserMenu extends Menu{
 
   @override
   Future<void> build() async{
-    print("1. ${"SignIn".tr}");
-    print("2. ${"SignUp".tr}");
+    print("1. ${"SignIn".tr} ✅");
+    print("2. ${"SignUp".tr} ❎");
 
     String press = stdin.readLineSync() ?? "";
 

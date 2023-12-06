@@ -30,7 +30,7 @@ void printBeginning(){
   print("  ______________________________________________  ");
   print(" |                                              | ");
   print(" |                                              | ");
-  pBold("|                📚TranslateApp📚             | ");
+  pBold("|                  📚TranslateApp📚            | ");
   print(" |                                              | ");
 
 }
@@ -44,8 +44,8 @@ void printExit() {
 
 ///prints a void strings in order to fulfill the ui
 void printVoid(){
-  print(" |                                              |");
-  print(" |                                              |");
+  print(" |                                               |");
+  print(" |                                               |");
 }
 
 ///displays a menu
@@ -104,13 +104,14 @@ void displayNewWord({
 ///displays the history of words that has been searched
 void displayListofWords(List<String> words, String menu){
   printBeginning();
-  print("                 ${"historyMenu".tr}📜");
+  print(" |               ${"historyMenu".tr}📜                      |");
   print("             $menu");
   for(int i = words.length-1; i>=0; i--){
     print("\t\t\t⭐️ ${words[i]}");
   }
   printVoid();
   print(" \t\t\t1. Main Menu 🔙");
+  print(" |               1. ${"mainMenu".tr}🔙              |");
   printExit();
 }
 
@@ -133,7 +134,7 @@ void displayMainMenu() {
     "1. ${"AddNewWord".tr} ✅",
     "2. ${"history".tr}📜",
     "3. ${"dictionary".tr}🔎",
-    "4. ${"settings".tr}"
+    "4. ${"settings".tr}⚙️"
   ];
   String menu = "mainMenu".tr;
   displayMenu(actions, menu);
@@ -142,8 +143,8 @@ void displayMainMenu() {
 ///display admin menu ui
 void adminMenuUi(){
   List<String> actionsAdmin = [
-    "1. ${"usersInfo".tr}",
-    "2. ${"deleteWrongWords".tr}"
+    "1. ${"usersInfo".tr} 📜",
+    "2. ${"deleteWrongWords".tr} 📝"
   ];
   String adminMenu = "adminMenu".tr;
   displayMenu(actionsAdmin, adminMenu);

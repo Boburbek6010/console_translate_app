@@ -27,8 +27,8 @@ class AuthenficationMenu extends Menu{
 
   @override
   Future<void> build() async{
-    print("1.${"user".tr}");
-    print("2.${"admin".tr}");
+    print("1.${"user".tr} 👥");
+    print("2.${"admin".tr} 👨🏻‍💻");
 
     String press = stdin.readLineSync() ?? "";
 

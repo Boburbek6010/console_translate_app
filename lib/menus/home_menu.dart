@@ -34,8 +34,8 @@ class HomeMenu extends Menu{
   @override
   Future<void> build()async{
     print("welcome".tr);
-    print("1. ${"ChangeLan".tr}");
-    print("2. ${"start".tr}");
+    print("1. ${"ChangeLan".tr} ⚙️");
+    print("2. ${"start".tr} ▶️");
 
     String press = stdin.readLineSync() ?? "";
 
