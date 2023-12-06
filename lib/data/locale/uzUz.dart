@@ -71,18 +71,4 @@ const Map<String, String> uz = {
   "firsCharUser":"Foydalanuvchi nomining birinchi belgisi raqam bolishi mumkin emas!",
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 };

@@ -49,7 +49,6 @@ Future<void> selectMenu(String press)async{
     default:
      IOService.write("tryAgain".tr);
       await displayHistory();
-
   }
 }
 
