@@ -7,7 +7,6 @@ import 'package:console_translate_app/services/ui_services.dart';
 import '../services/io_services.dart';
 import '../services/language_service.dart';
 import 'main_menu.dart';
-import 'authenfication_menu.dart';
 
 
 class SettingMenu extends Menu{
