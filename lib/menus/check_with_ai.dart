@@ -74,7 +74,7 @@ Future<void> dAddedWords (
 
 Future<void> checkProcess({ required String word, required String trans, required String to, required String from}) async{
   bool match = false;
-  Translation gtr = await word.translate(from: to, to: from);
+  Translation gtr = await word.translate(from: from, to: to);
   if(gtr.toString().toLowerCase() == trans.toLowerCase()) match = true;
   displayCheckResult(word: word, translation: trans, gtr: gtr.toString().toLowerCase(), match: match);
 }

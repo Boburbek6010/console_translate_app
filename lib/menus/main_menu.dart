@@ -59,14 +59,6 @@ bool checkEmpty(String word){
   else return false;
 }
 
-///prevents empty input bu asking a question again and again
-void preventNull(String? string, String action){
-  while(string==""){
-    print("$action");
-    string = stdin.readLineSync();
-  }
-}
-
 bool checkLangContain(String lang){
   return true;
 }

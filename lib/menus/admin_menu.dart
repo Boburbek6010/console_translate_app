@@ -33,9 +33,9 @@ class AdminMenu extends Menu{
 
   @override
   Future<void> build()async{
-    print("${"welcome".tr} **ADMIN**");
-    adminMenuUi();
 
+    adminMenuUi();
+    stdout.write("chooseFT".tr);
     String press = stdin.readLineSync() ?? "";
 
     await selectMenu(press);
