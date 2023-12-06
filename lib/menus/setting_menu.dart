@@ -2,7 +2,9 @@ import 'dart:io';
 
 import 'package:console_translate_app/menus/home_menu.dart';
 import 'package:console_translate_app/services/navigation_service.dart';
+import 'package:console_translate_app/services/ui_services.dart';
 
+import '../services/io_services.dart';
 import '../services/language_service.dart';
 import 'main_menu.dart';
 import 'authenfication_menu.dart';
@@ -34,10 +36,13 @@ class SettingMenu extends Menu{
 
   @override
   Future<void> build()async{
-    print("1. UZ🇺🇿");
-    print("2. RU🇷🇺");
-    print("3. EN🇺🇸");
-
+    List<String> actions = [
+      "1. UZ🇺🇿",
+      "2. RU🇷🇺",
+      "3. EN🇺🇸\n"
+    ];
+    displayMenu(actions, " ");
+    IOService.write(" ---> ");
     String press = stdin.readLineSync() ?? "";
 
     await selectMenu(press);

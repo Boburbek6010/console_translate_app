@@ -25,6 +25,10 @@ class HomeMenu extends Menu{
       case "2":{
         await Navigator.push(AuthenficationMenu());
       }
+      break;
+      case "0":{
+        exit(0);
+      }
       default:
         IOService.write("tryAgain".tr);
         build();
@@ -33,12 +37,17 @@ class HomeMenu extends Menu{
 
   @override
   Future<void> build()async{
-    print("welcome".tr);
-    print("1. ${"ChangeLan".tr} ⚙️");
-    print("2. ${"start".tr} ▶️");
+    String menuName = "welcome".tr;
+    List<String> actions = [
+      "1. ${"ChangeLan".tr} ⚙️",
+      "2. ${"start".tr} ▶️"
+    ];
+    // print();
+    // print();
 
+    displayMenu(actions, menuName);
+    IOService.write(" ---> ");
     String press = stdin.readLineSync() ?? "";
-
     await selectMenu(press);
   }
 

@@ -1,5 +1,5 @@
 import 'package:console_translate_app/services/language_service.dart';
-import '../data/locale/enEn.dart';
+import '../data/locale/enEN.dart';
 import '../data/locale/ruRU.dart';
 import '../data/locale/uzUZ.dart';
 

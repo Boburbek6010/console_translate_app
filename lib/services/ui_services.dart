@@ -37,7 +37,7 @@ void printBeginning(){
 
 ///prints the bottom of the application
 void printExit() {
-  print(" |                   0. Exit ❌                  |");
+  print("  \t\t\t0. Exit ❌");
   printVoid();
   print(" |_______________________________________________|");
 }
@@ -51,10 +51,10 @@ void printVoid(){
 ///displays a menu
 void displayMenu(List<String> actions, String menuName) {
   printBeginning();
-  print("\t\t\t\t\t$menuName");
+  pBold("\t\t\t$menuName");
   printVoid(); printVoid();
   for (var element in actions) {
-    print("\t\t$element");
+    print("\t\t\t$element");
   }
   printExit();
 }
