@@ -17,16 +17,19 @@ class SettingMenu extends Menu{
       case "1":{
         LanguageService.setLanguage = Language.uz;
         await Navigator.push(HomeMenu());
+        break;
       }
 
       case "2":{
         LanguageService.setLanguage = Language.ru;
         await Navigator.push(HomeMenu());
+        break;
       }
 
       case "3":{
         LanguageService.setLanguage = Language.en;
         await Navigator.push(HomeMenu());
+        break;
       }
       case "0":{
         exit(0);

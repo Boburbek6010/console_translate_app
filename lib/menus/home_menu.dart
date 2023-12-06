@@ -19,10 +19,12 @@ class HomeMenu extends Menu{
     switch(press){
       case "1":{
         await Navigator.push(SettingMenu());
+        break;
       }
       break;
       case "2":{
         await Navigator.push(AuthenficationMenu());
+        break;
       }
       break;
       case "0":{

@@ -23,6 +23,9 @@ class UserMenu extends Menu{
       case "2":{
         await Navigator.push(RegisterMenu());
       }
+      case "0":{
+        exit(0);
+      }
       default:
         IOService.write("tryAgain".tr);
         build();
