@@ -60,8 +60,8 @@ Future<void> addNewWord() async{
 
   actions.forEach((e) {
     print(e);
-    String eh = stdin.readLineSync() ?? "";
-    if(checkEmpty(eh)) preventNull(eh, e);
+    String eh = IOService.read();
+    if(eh.isEmpty) eh.preventNull();
     answers.add(eh);
   });
   addNewWordProcess(answers);
@@ -75,6 +75,7 @@ Future<void> addNewWordProcess(List<String> answers) async {
     "translation": answers[3],
     "description": answers[4],
   };
+  print("CurrentLang - ${newWord["currentLang"]}");
 
   while(!checkLangContain(newWord["currentLang"]!)){
     IOService.write("Tanlangan til noto'g'ri kiritilgan! Qaytadan kiriting! ${"fromLang".tr}");

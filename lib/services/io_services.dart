@@ -55,4 +55,12 @@ extension Str_ex on String{
     }
   }
 
+  String preventNull(){
+    String a = "";
+    while(this =="" && a==""){
+      IOService.write("Invalid character! Enter again ---> ");
+      a = IOService.read();
+    }
+    return a;
+  }
 }
