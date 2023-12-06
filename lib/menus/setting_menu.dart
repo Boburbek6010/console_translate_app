@@ -28,6 +28,9 @@ class SettingMenu extends Menu{
         LanguageService.setLanguage = Language.en;
         await Navigator.push(HomeMenu());
       }
+      case "0":{
+        exit(0);
+      }
 
       default: build();
     }
